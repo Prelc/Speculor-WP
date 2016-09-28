@@ -1,0 +1,46 @@
+/* Header */
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: #ffffff;
+	box-shadow: $primary-box-shadow;
+	min-height: 90px;
+	margin-bottom: 60px;
+
+	&__heading {
+		font-family: $secondary-font;
+		font-size: 36px;
+		font-weight: bold;
+		line-height: 1;
+		color: $gray-dark;
+		padding-top: 24px;
+		padding-bottom: 30px;
+		margin-bottom: 0;
+	}
+
+	&__heading-link {
+		margin-left: 15px;
+
+		@include media-breakpoint-up(md) {
+			margin-left: 30px;
+		}
+
+		@include media-breakpoint-up(xl) {
+			margin-left: 60px;
+		}
+
+		&:focus,
+		&:hover {
+			text-decoration: none;
+
+			.header__heading {
+				color: #000000;
+			}
+		}
+	}
+
+	+ .header-widgets {
+		margin-top: -60px;
+	}
+}

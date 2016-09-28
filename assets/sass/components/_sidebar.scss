@@ -1,0 +1,40 @@
+/* Sidebar */
+.sidebar {
+	font-size: 14px;
+	padding-left: 26px;
+
+	.widget {
+		background-color: #ffffff;
+		border: 1px solid #eeeeee;
+		box-shadow: $primary-box-shadow;
+		padding: 27px 30px 30px;
+		margin-bottom: 30px;
+	}
+
+	&__heading {
+		position: relative;
+		font-size: 14px;
+		text-transform: uppercase;
+		padding-bottom: 13px;
+		margin-bottom: 30px;
+
+		&::before,
+		&::after {
+			position: absolute;
+			content: '';
+			bottom: 0;
+		}
+
+		&::before {
+			border-bottom: 1px dashed $gray-lightest;
+			left: 30px;
+			right: 0;
+		}
+
+		&::after {
+			border-bottom: 1px dashed $brand-primary;
+			left: 0;
+			width: 30px;
+		}
+	}
+}

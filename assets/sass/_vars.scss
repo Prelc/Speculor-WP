@@ -1,0 +1,83 @@
+/*------------------------------------*\
+    Local variables
+\*------------------------------------*/
+
+// Colors
+//
+// Grayscale and brand colors for use across Bootstrap.
+
+$gray-dark: #272727;
+$gray: #696773;
+$gray-light: #999999;
+$gray-lighter: #aaaaaa;
+$gray-lightest: #eff1f3;
+
+$brand-primary: #fed766;
+$brand-secondary: #009fb7;
+
+// Body
+//
+// Settings for the `<body>` element.
+
+$body-color: $gray;
+
+// Links
+//
+// Style anchor elements.
+
+$link-color: $brand-secondary;
+
+// Typography
+//
+// Font, line-height, and color for body text, headings, and more.
+
+// Rem px ratio Function
+@function ptr($px) {
+	@return ($px / $rem-px-ratio) + rem;
+}
+
+$font-family-sans-serif: 'Montserrat', Helvetica, Arial, sans-serif;
+$font-family-serif: 'Lora', Georgia, 'Times New Roman', Times, serif;
+$font-family-base: $font-family-serif;
+
+$font-size-root: 18px;
+$rem-px-ratio: 18;
+
+// $font-size-h1: ptr(36);
+// $font-size-h2: ptr(32);
+// $font-size-h3: ptr(28);
+// $font-size-h4: ptr(24);
+// $font-size-h5: ptr(20);
+// $font-size-h6: ptr(16);
+
+$line-height: 1.67;
+
+$headings-font-family: $font-family-sans-serif;
+$headings-font-weight: bold;
+$headings-line-height: 1.2;
+$headings-color: $gray-dark;
+
+// Components
+//
+// Define common padding and border radius sizes and more.
+
+$border-radius: 2px;
+
+// Code
+
+$code-bg: #f9f2f4;
+
+// Custom variables which are not part of the Bootstrap.
+
+// Font
+$primary-font: $font-family-serif;
+$secondary-font: $font-family-sans-serif;
+
+// Transitions
+$primary-transition: all 100ms ease-out;
+
+// Box shadow
+$primary-box-shadow: 0 1px 3px rgba(0, 0, 0, .05);
+
+// Font Awesome path
+$fa-font-path: 'bower_components/font-awesome/fonts';

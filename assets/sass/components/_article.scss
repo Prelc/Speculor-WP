@@ -1,0 +1,206 @@
+/* Article */
+.article {
+	background-color: #ffffff;
+	border: 1px solid #eeeeee;
+	border-radius: $border-radius;
+	box-shadow: $primary-box-shadow;
+	padding: 45px 45px 37px;
+	margin-bottom: 30px;
+
+	.page &,
+	.single & {
+		padding: 52px 90px 51px;
+	}
+
+	&__featured-image {
+		border-top-left-radius: $border-radius;
+		border-top-right-radius: $border-radius;
+
+		&-container {
+			margin: -45px;
+			margin-bottom: 40px;
+
+			.single & {
+				margin: -52px -90px 55px;
+			}
+		}
+	}
+
+	&__meta {
+		font-family: $secondary-font;
+		font-size: 12px;
+		text-transform: uppercase;
+		color: $gray-lighter;
+		margin-bottom: 4px;
+
+		.single & {
+			margin-bottom: 2px;
+		}
+
+		a {
+			color: $gray-lighter;
+
+			&:focus,
+			&:hover {
+				color: darken($gray-lighter, 12);
+				text-decoration: none;
+			}
+		}
+
+		.meta__separator {
+			margin: 0 10px;
+		}
+	}
+
+	&__title {
+		font-size: 26px;
+		margin-bottom: 28px;
+
+		.single & {
+			font-size: 30px;
+			margin-bottom: 41px;
+		}
+
+		a {
+			color: $gray-dark;
+		}
+	}
+
+	&__content {
+		font-size: 16px;
+
+		.page &,
+		.single & {
+			font-size: 18px;
+		}
+
+		// Content Margins
+		> p,
+		> img,
+		> figure,
+		> table,
+		> dl,
+		> dd,
+		> ul,
+		> ol {
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		// Content Margins
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			margin-bottom: 24px;
+		}
+
+		// Content Margins
+		blockquote {
+			margin-bottom: 53px;
+		}
+
+		// Content Margins
+		dl,
+		dd,
+		ul,
+		ol,
+		p {
+			margin-bottom: 26px;
+
+			+ blockquote {
+				margin-top: 52px;
+			}
+
+			+ h1,
+			+ h2,
+			+ h3,
+			+ h4,
+			+ h5,
+			+ h6 {
+				margin-top: 52px;
+			}
+		}
+
+		li {
+			ul,
+			ol {
+				margin-bottom: 0;
+			}
+		}
+
+		// Content Margins
+		pre,
+		img,
+		figure,
+		table {
+			margin-top: 51px;
+			margin-bottom: 50px;
+
+			+ h1,
+			+ h2,
+			+ h3,
+			+ h4,
+			+ h5,
+			+ h6 {
+				margin-top: 46px;
+			}
+		}
+
+		// Content Margins
+		p {
+			> a > img {
+				display: inline-block;
+				margin-top: 25px;
+				margin-bottom: 23px;
+			}
+
+			> img {
+				display: inline-block;
+				margin-top: 25px;
+				margin-bottom: 23px;
+			}
+		}
+
+		.alignleft,
+		.alignright {
+			margin-top: 0;
+			margin-bottom: 35px;
+		}
+
+		// Content Margins
+		figure {
+			img {
+				margin-top: 0;
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	&__tags {
+		margin-top: 50px;
+		margin-bottom: 20px;
+
+		.single & {
+			margin-bottom: 0;
+		}
+	}
+
+	// Read more link.
+	.more-link {
+		display: block;
+		font-family: $secondary-font;
+		font-size: 14px;
+		font-weight: bold;
+		text-transform: uppercase;
+		margin-top: -10px;
+
+		&:focus,
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}

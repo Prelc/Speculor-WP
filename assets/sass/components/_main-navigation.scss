@@ -1,0 +1,253 @@
+/* Main Navigation */
+.main-navigation {
+	@include list-unstyled;
+	font-size: 0; // Hack for having 0px space between menu-items.
+	text-align: right;
+	margin-left: 30px;
+	margin-right: 11px;
+	margin-bottom: 0;
+
+	@include media-breakpoint-up(xl) {
+		margin-right: 41px;
+	}
+
+	.menu-item {
+		position: relative;
+		display: inline-block;
+		font-size: 14px;
+
+		// :hover colors for Main Navigation links (without sub-menus).
+		&:focus,
+		&:hover {
+			> a {
+				color: $gray-dark;
+				text-decoration: none;
+
+				// Shown line above menu items.
+				&::before {
+					opacity: 1;
+					visibility: visible;
+					top: 0;
+				}
+
+				&::after {
+					bottom: -4px;
+					background-color: $brand-primary;
+				}
+			}
+
+			// 1. level sub-menus are open on :hover.
+			> .sub-menu {
+				opacity: 1;
+				visibility: visible;
+				transform: scaleY(1);
+			}
+		}
+	}
+
+	> .menu-item {
+		> a {
+			// Hidden line above menu items.
+			&::before {
+				position: absolute;
+				content: '';
+				opacity: 0;
+				visibility: hidden;
+				background-color: $brand-primary;
+				height: 3px;
+				top: -3px;
+				left: 0;
+				right: 0;
+				transition: $primary-transition;
+			}
+		}
+
+		// Featured menu item has different style than normal menu items.
+		&.menu-item-featured {
+			a {
+				padding-right: 20px;
+			}
+		}
+	}
+
+	// Main navigation link style.
+	a {
+		position: relative;
+		display: block;
+		font-family: $secondary-font;
+		font-weight: bold;
+		color: $gray;
+		padding: 33.5px 19px;
+
+		// Main navigation menu items on focus.
+		&:focus {
+			@include media-breakpoint-up(lg) {
+				color: $gray;
+				text-decoration: none;
+			}
+		}
+	}
+
+	// Active current link.
+	> .current-menu-item {
+		> a {
+			@include media-breakpoint-up(lg) {
+				color: $gray-dark;
+			}
+
+			// Shown line above menu items.
+			&::before {
+				opacity: 1;
+				visibility: visible;
+				top: 0;
+			}
+		}
+	}
+
+	// Item with children.
+	> .menu-item-has-children {
+		// Indicator for sub-menus.
+		> a {
+			&::after {
+				@include media-breakpoint-up(lg) {
+					position: absolute;
+					content: '';
+					background-color: transparent;
+					width: 8px;
+					height: 8px;
+					bottom: 20px;
+					left: calc(50% - 4px);
+					border-radius: $border-radius;
+					transform: rotate(45deg);
+					border: 2px solid $brand-primary;
+					border-top-color: transparent;
+					border-left-color: transparent;
+					transition: all 150ms ease-out;
+				}
+			}
+		}
+	}
+
+	// Sub-menu items.
+	.sub-menu {
+		@include list-unstyled;
+		position: absolute;
+		z-index: 10;
+		opacity: 0;
+		visibility: hidden;
+		text-align: left;
+		border-radius: $border-radius;
+		transform: scaleY(0);
+		transform-origin: top;
+		transition: $primary-transition;
+		transition-delay: 50ms;
+
+		.menu-item {
+			display: block;
+
+			// 2. level sub menus are open on :hover.
+			&:focus,
+			&:hover {
+				> .sub-menu {
+					visibility: visible;
+					opacity: 1;
+				}
+
+				> a {
+					background-color: darken($brand-primary, 6);
+					color: $gray-dark;
+				}
+			}
+
+			&:last-of-type {
+				> a {
+					@include media-breakpoint-up(lg) {
+						border-bottom: 0;
+						border-bottom-left-radius: 2px;
+						border-bottom-right-radius: 2px;
+					}
+				}
+			}
+		}
+
+		// Sub menu links.
+		a {
+			display: block;
+			font-size: 12px;
+			font-weight: normal;
+			background-color: $brand-primary;
+			color: $gray-dark;
+			border-bottom: 1px solid darken($brand-primary, 6);
+			min-width: 150px;
+			white-space: nowrap;
+			padding: 12px 19px;
+			transition: $primary-transition;
+		}
+
+		// 2. level + are opening next to each other.
+		.sub-menu {
+			left: 100%;
+			top: 0;
+			transform: scaleY(1);
+
+			.menu-item {
+				&:last-of-type {
+					> a {
+						border-bottom-left-radius: 0;
+						border-bottom-right-radius: 0;
+					}
+				}
+			}
+
+			a {
+				border-left: 1px solid darken($brand-primary, 6);
+			}
+		}
+
+		.menu-item-has-children {
+			> a {
+				padding-right: 38px;
+			}
+
+			&::after {
+				@include media-breakpoint-up(lg) {
+					position: absolute;
+					content: '';
+					background-color: transparent;
+					width: 8px;
+					height: 8px;
+					top: calc(50% - 4px);
+					right: 19px;
+					border-radius: $border-radius;
+					transform: rotate(45deg);
+					border: 2px solid darken($brand-primary, 12);
+					border-bottom-color: transparent;
+					border-left-color: transparent;
+				}
+			}
+		}
+	}
+
+	// Featured menu item.
+	.menu-item-featured {
+		margin-left: 19px;
+		margin-right: 19px;
+
+		a {
+			border: 2px solid $brand-primary;
+			border-radius: 45px;
+			padding: 9px 20px;
+			transition: $primary-transition;
+
+			&:focus,
+			&:hover {
+				border: 2px solid darken($brand-primary, 12);
+			}
+
+			// Don't show line above menu item.
+			&::before {
+				display: none;
+			}
+		}
+	}
+}

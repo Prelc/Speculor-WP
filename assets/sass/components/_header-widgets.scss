@@ -1,0 +1,31 @@
+/* Header Widgets */
+.header-widgets {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	font-size: 14px;
+	background-color: darken($gray-lightest, 3);
+	min-height: 60px;
+	margin-bottom: 60px;
+	padding-left: 15px;
+	padding-right: 15px;
+
+	@include media-breakpoint-up(md) {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+
+	@include media-breakpoint-up(xl) {
+		padding-left: 60px;
+		padding-right: 60px;
+	}
+
+	&__left,
+	&__right {
+		padding: 7.5px 0;
+	}
+
+	+ .page-header {
+		margin-top: -60px;
+	}
+}

@@ -1,0 +1,260 @@
+/* WordPress Widgets */
+
+/* Applies to all widgets */
+.widget {
+	select,
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+}
+
+/* Calendar Widget */
+.widget_calendar {
+	table {
+		width: 100%;
+		border: 0;
+		margin-bottom: 0;
+	}
+
+	caption {
+		font-family: $secondary-font;
+		background-color: $brand-primary;
+		color: #ffffff;
+		padding: 5px 0;
+		text-align: center;
+		border-radius: $border-radius;
+		caption-side: inherit;
+	}
+
+	thead {
+		th {
+			font-family: $secondary-font;
+			padding: 5px 0;
+			text-align: center;
+			color: $gray-light;
+			background-color: rgba(0, 0, 0, .05);
+			border: 1px solid rgba(0, 0, 0, .05);
+		}
+	}
+
+	tbody {
+		td {
+			padding: 3px 0;
+			text-align: center;
+			border: 1px solid rgba(0, 0, 0, .05);
+		}
+	}
+
+	tfoot {
+		td {
+			padding: 5px;
+			border: 0;
+
+			&:last-of-type {
+				a {
+					float: right;
+				}
+			}
+		}
+	}
+}
+
+/* Tag Cloud Widget */
+.widget_tag_cloud {
+	.sidebar & {
+		padding-bottom: 20px;
+	}
+
+	a {
+		display: inline-block;
+		font-family: $secondary-font;
+		font-size: 10px;
+		font-weight: bold;
+		text-transform: uppercase;
+		background-color: $gray-lightest;
+		color: $gray-light;
+		border-radius: $border-radius;
+		padding: 7px 10px;
+		margin-right: 6px;
+		margin-bottom: 10px;
+		transition: $primary-transition;
+
+		&:focus,
+		&:hover {
+			text-decoration: none;
+			background-color: darken($gray-lightest, 6);
+			color: darken($gray-light, 6);
+		}
+	}
+}
+
+/* Search Widget */
+.widget_search {
+	.sidebar & {
+		padding: 0;
+		background-color: transparent;
+		box-shadow: none;
+	}
+
+	.search-form {
+		label {
+			position: relative;
+			width: 100%;
+			margin-bottom: 0;
+		}
+
+		&__submit {
+			position: absolute;
+			background-color: #ffffff;
+			color: $gray;
+			border: 0;
+			border-radius: 45px;
+			right: 2px;
+			top: 2px;
+			height: 41px;
+			width: 45px;
+			padding: 0;
+
+			.fa {
+				font-size: 18px;
+			}
+		}
+
+		&__field {
+			display: block;
+			font-size: 14px;
+			background-color: #ffffff;
+			color: $gray;
+			border: 2px solid #dddddd;
+			border-radius: 45px;
+			height: ptr(45);
+			padding: 0 ptr(60) 0 ptr(20);
+			transition: $primary-transition;
+
+			&:hover {
+				border: 2px solid #bbbbbb;
+			}
+
+			&:focus {
+				border: 2px solid $brand-primary;
+			}
+		}
+	}
+}
+
+/* Widgets With Lists */
+.widget_archive,
+.widget_pages,
+.widget_categories,
+.widget_meta,
+.widget_recent_comments,
+.widget_recent_entries,
+.widget_rss {
+	ul {
+		@include list-unstyled;
+		padding-right: 0;
+		margin-bottom: 0;
+	}
+
+	> ul {
+		> li {
+			&:first-of-type {
+				border-top: 0;
+				padding-top: 0;
+
+				> a {
+					padding-top: 0;
+				}
+			}
+
+			&:last-of-type {
+				> a {
+					padding-bottom: 0;
+				}
+			}
+		}
+	}
+
+	li {
+		border-top: 1px solid $gray-lightest;
+	}
+
+	a {
+		display: inline-block;
+		color: $gray;
+		font-family: $secondary-font;
+		font-size: 14px;
+		font-weight: bold;
+		margin-right: 5px;
+		padding: 13.5px 0;
+		word-wrap: break-word;
+
+		&:hover {
+			color: $brand-secondary;
+			text-decoration: none;
+		}
+	}
+
+	.children a {
+		padding-left: 10px;
+	}
+
+	.children .children a {
+		padding-left: 20px;
+	}
+
+	.children .children .children a {
+		padding-left: 30px;
+	}
+}
+
+// Specific recent comments style
+.widget_recent_comments {
+	li {
+		padding: 13.5px 0;
+	}
+
+	a {
+		padding: 0;
+	}
+}
+
+// Specific widget RSS style.
+.widget_rss {
+	li {
+		padding-bottom: 20px;
+		border-top: 0;
+	}
+
+	a {
+		padding: 0 0 5px;
+	}
+}
+
+/* Images in text widgets. */
+.textwidget {
+	a > img {
+		&.alignright,
+		&.alignnone,
+		&.alignleft,
+		&.aligncenter {
+			margin-top: 0;
+		}
+	}
+
+	> p:last-of-type {
+		margin-bottom: 0;
+	}
+}
+
+/* Custom Menu */
+.widget_nav_menu {
+	ul {
+		@include list-unstyled;
+	}
+
+	.sub-menu {
+		padding-left: 10px;
+	}
+}
