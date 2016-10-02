@@ -7,6 +7,11 @@
  * @package speculor
  */
 
+$speculor_layout = 'right';
+if ( function_exists( get_field ) ) {
+	$speculor_layout = get_field( 'layout', (int) get_option( 'page_for_posts' ) ) ;
+}
+
 get_header();
 
 get_template_part( 'template-parts/page-header' );
@@ -16,7 +21,7 @@ get_template_part( 'template-parts/page-header' );
 	<div class="content-area  container">
 		<div class="row">
 			<!-- Main Content -->
-			<main class="col-xs-12  col-lg-8">
+			<main class="col-xs-12<?php echo 'left' === $speculor_layout ? '  col-lg-8  col-lg-push-4' : ''; ?><?php echo 'right' === $speculor_layout ? '  col-lg-8' : ''; ?><?php echo 'narrow' === $speculor_layout ? '  col-lg-8  col-lg-offset-2' : ''; ?>">
 				<?php	while ( have_posts() ) : the_post();
 
 					get_template_part( 'template-parts/content', 'single' );
@@ -32,12 +37,16 @@ get_template_part( 'template-parts/page-header' );
 				endwhile; // End of the loop.
 				?>
 			</main>
-			<!-- Sidebar -->
-			<div class="col-xs-12  col-lg-4">
-				<div class="sidebar  sidebar--blog">
-					<?php dynamic_sidebar( 'blog-sidebar' ); ?>
+
+			<?php
+			if ( ( 'wide' !== $speculor_layout && 'narrow' !== $speculor_layout ) && is_active_sidebar( 'blog-sidebar' ) ) : ?>
+				<!-- Sidebar -->
+				<div class="col-xs-12  col-lg-4<?php echo 'left' === $speculor_layout ? '  col-lg-pull-8' : ''; ?>">
+					<div class="sidebar  sidebar--blog">
+						<?php dynamic_sidebar( 'blog-sidebar' ); ?>
+					</div>
 				</div>
-			</div>
+			<?php endif; ?>
 		</div><!-- .row -->
 	</div><!-- .content-area -->
 
