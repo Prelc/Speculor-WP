@@ -154,7 +154,7 @@
 				}
 
 				> a {
-					background-color: darken($brand-primary, 6);
+					background-color: darken($brand-primary, 12);
 					color: $gray-dark;
 				}
 			}
@@ -177,7 +177,7 @@
 			font-weight: normal;
 			background-color: $brand-primary;
 			color: $gray-dark;
-			border-bottom: 1px solid darken($brand-primary, 6);
+			border-bottom: 1px solid darken($brand-primary, 12);
 			min-width: 150px;
 			white-space: nowrap;
 			padding: 12px 19px;
@@ -200,7 +200,7 @@
 			}
 
 			a {
-				border-left: 1px solid darken($brand-primary, 6);
+				border-left: 1px solid darken($brand-primary, 12);
 			}
 		}
 
