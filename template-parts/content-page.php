@@ -9,7 +9,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'article' ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'article  clearfix' ); ?>>
 	<div class="article__content">
 		<!-- Content -->
 		<?php the_content(); ?>

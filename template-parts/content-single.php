@@ -9,7 +9,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'clearfix  article' ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'article  clearfix' ); ?>>
 	<!-- Post Thumbnail -->
 	<div class="article__featured-image-container">
 		<?php if ( has_post_thumbnail() ) : ?>
