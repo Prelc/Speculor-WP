@@ -41,4 +41,4 @@ get_template_part( 'template-parts/page-header' );
 		</div><!-- .row -->
 	</div><!-- .content-area -->
 
-<?php get_footer();
+<?php get_footer(); ?>

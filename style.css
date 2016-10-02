@@ -3790,14 +3790,7 @@ pre {
     .page .article__content,
     .single .article__content {
       font-size: 18px; }
-    .article__content > p:last-child,
-    .article__content > img:last-child,
-    .article__content > figure:last-child,
-    .article__content > table:last-child,
-    .article__content > dl:last-child,
-    .article__content > dd:last-child,
-    .article__content > ul:last-child,
-    .article__content > ol:last-child {
+    .article__content > *:last-child {
       margin-bottom: 0; }
     .article__content h1,
     .article__content h2,
