@@ -17,24 +17,6 @@
 		text-transform: uppercase;
 		padding-bottom: 13px;
 		margin-bottom: 30px;
-
-		&::before,
-		&::after {
-			position: absolute;
-			content: '';
-			bottom: 0;
-		}
-
-		&::before {
-			border-bottom: 1px dashed $gray-lightest;
-			left: 30px;
-			right: 0;
-		}
-
-		&::after {
-			border-bottom: 1px dashed $brand-primary;
-			left: 0;
-			width: 30px;
-		}
+		border-bottom: 1px solid $gray-lightest;
 	}
 }
