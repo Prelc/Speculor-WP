@@ -3218,17 +3218,17 @@ blockquote {
         border: 2px solid #fec729;
         border-bottom-color: transparent;
         border-left-color: transparent; } }
-  .main-navigation .menu-item-featured {
+  .main-navigation .featured {
     margin-left: 19px;
     margin-right: 19px; }
-    .main-navigation .menu-item-featured a {
+    .main-navigation .featured a {
       border: 2px solid #fed766;
       border-radius: 45px;
       padding: 9px 20px;
       transition: all 100ms ease-out; }
-      .main-navigation .menu-item-featured a:focus, .main-navigation .menu-item-featured a:hover {
+      .main-navigation .featured a:focus, .main-navigation .featured a:hover {
         border: 2px solid #fec729; }
-      .main-navigation .menu-item-featured a::before {
+      .main-navigation .featured a::before {
         display: none; }
 
 /* Pagination */
