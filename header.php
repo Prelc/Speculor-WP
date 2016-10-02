@@ -53,17 +53,23 @@
 			?>
 		</nav>
 	</header>
-	<div class="header-widgets">
-		<!-- Header widget left area -->
-		<?php if ( is_active_sidebar( 'header-widgets-left' ) ) : ?>
-			<div class="header-widgets__left">
-				<?php dynamic_sidebar( 'header-widgets-left' ); ?>
-			</div>
-		<?php endif; ?>
-		<!-- Header widget right area -->
-		<?php if ( is_active_sidebar( 'header-widgets-right' ) ) : ?>
-			<div class="header-widgets__right">
-				<?php dynamic_sidebar( 'header-widgets-right' ); ?>
-			</div>
-		<?php endif; ?>
-	</div>
+
+	<?php
+	// Hide header widgets, if both header sidebars are not in use.
+	if ( is_active_sidebar( 'header-widgets-left' ) || is_active_sidebar( 'header-widgets-left' ) ) {
+	?>
+		<div class="header-widgets">
+			<!-- Header widget left area -->
+			<?php if ( is_active_sidebar( 'header-widgets-left' ) ) : ?>
+				<div class="header-widgets__left">
+					<?php dynamic_sidebar( 'header-widgets-left' ); ?>
+				</div>
+			<?php endif; ?>
+			<!-- Header widget right area -->
+			<?php if ( is_active_sidebar( 'header-widgets-right' ) ) : ?>
+				<div class="header-widgets__right">
+					<?php dynamic_sidebar( 'header-widgets-right' ); ?>
+				</div>
+			<?php endif; ?>
+		</div>
+	<?php } ?>
