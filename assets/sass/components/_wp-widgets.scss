@@ -94,6 +94,7 @@
 	.sidebar & {
 		padding: 0;
 		background-color: transparent;
+		border: 0;
 		box-shadow: none;
 	}
 
@@ -177,21 +178,21 @@
 	}
 
 	li {
-		border-top: 1px solid $gray-lightest;
+		border-top: 1px dashed $gray-lightest;
 	}
 
 	a {
 		display: inline-block;
-		color: $gray;
 		font-family: $secondary-font;
 		font-size: 14px;
 		font-weight: bold;
+		color: $gray;
 		margin-right: 5px;
 		padding: 13.5px 0;
 		word-wrap: break-word;
 
 		&:hover {
-			color: $brand-secondary;
+			color: $brand-primary;
 			text-decoration: none;
 		}
 	}
@@ -206,6 +207,16 @@
 
 	.children .children .children a {
 		padding-left: 30px;
+	}
+}
+
+.widget_archive,
+.widget_categories,
+.widget_recent_comments,
+.widget_recent_entries {
+	li {
+		font-family: $secondary-font;
+		color: $gray-light;
 	}
 }
 
@@ -230,6 +241,11 @@
 	a {
 		padding: 0 0 5px;
 	}
+
+	.rss-date {
+		font-family: $secondary-font;
+		color: $gray-light;
+	}
 }
 
 /* Images in text widgets. */
@@ -252,9 +268,65 @@
 .widget_nav_menu {
 	ul {
 		@include list-unstyled;
+		margin-bottom: 0;
 	}
 
-	.sub-menu {
+	.menu {
+		> .menu-item {
+			&:first-of-type {
+				border-top: 0;
+				padding-top: 0;
+
+				> a {
+					padding-top: 0;
+				}
+			}
+
+			&:last-of-type {
+				> a {
+					padding-bottom: 0;
+				}
+			}
+		}
+	}
+
+	.menu-item {
+		border-top: 1px dashed $gray-lightest;
+
+		a {
+			display: block;
+			font-family: $secondary-font;
+			font-size: 14px;
+			font-weight: bold;
+			color: $gray;
+			padding: 13.5px 0;
+			word-wrap: break-word;
+
+			&:focus,
+			&:hover {
+				text-decoration: none;
+				color: $brand-primary;
+			}
+		}
+	}
+
+	.sub-menu a {
 		padding-left: 10px;
+	}
+
+	.sub-menu .sub-menu a {
+		padding-left: 20px;
+	}
+
+	.sub-menu .sub-menu .sub-menu a {
+		padding-left: 30px;
+	}
+
+	.sub-menu .sub-menu .sub-menu .sub-menu a {
+		padding-left: 40px;
+	}
+
+	.sub-menu .sub-menu .sub-menu .sub-menu .sub-menu a {
+		padding-left: 50px;
 	}
 }
