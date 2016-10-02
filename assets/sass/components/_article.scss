@@ -75,14 +75,7 @@
 		}
 
 		// Content Margins
-		> p,
-		> img,
-		> figure,
-		> table,
-		> dl,
-		> dd,
-		> ul,
-		> ol {
+		> * {
 			&:last-child {
 				margin-bottom: 0;
 			}
