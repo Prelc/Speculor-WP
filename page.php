@@ -14,7 +14,7 @@
 
 $speculor_layout = 'right';
 if ( function_exists( get_field ) ) {
-	$speculor_layout = get_field( 'layout', (int) get_option( 'page_for_posts' ) ) ;
+	$speculor_layout = get_field( 'layout' ) ;
 }
 
 get_header();
