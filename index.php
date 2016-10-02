@@ -12,11 +12,11 @@
  * @package speculor
  */
 
-get_header(); ?>
+get_header();
 
-	<div class="page-header">
-		<?php the_title( '<h1 class="page-header__title">', '</h1>' ); ?>
-	</div>
+get_template_part( 'template-parts/page-header' );
+
+?>
 
 	<div class="content-area  container">
 		<div class="row">
