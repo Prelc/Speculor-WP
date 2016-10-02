@@ -7,7 +7,11 @@
  * @package speculor
  */
 
-get_header(); ?>
+get_header();
+
+get_template_part( 'template-parts/page-header' );
+
+?>
 
 	<div class="content-area  container">
 		<div class="row">

@@ -16,7 +16,7 @@
 			<?php echo wp_kses_post( get_theme_mod( 'footer_left', 'Speculor - WordPress theme made by <a href="https://twitter.com/prelc">Prelc</a>.' ) ); ?>
 		</div>
 		<div class="footer__right">
-			<?php echo wp_kses_post( get_theme_mod( 'footer_right', '© 2016. All rights reserved.' ) ); ?>
+			<?php echo wp_kses_post( get_theme_mod( 'footer_right', 'Copyright 2016. All rights reserved.' ) ); ?>
 		</div>
 	</footer>
 
