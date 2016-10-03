@@ -40,6 +40,20 @@
 		}
 	}
 
+	&__navbar-toggler {
+		margin-right: 15px;
+
+		@include media-breakpoint-up(md) {
+			margin-right: 30px;
+		}
+
+		&:focus,
+		&:hover,
+		&:active:focus {
+			outline: none;
+		}
+	}
+
 	+ .header-widgets,
 	+ .page-header {
 		margin-top: -60px;
