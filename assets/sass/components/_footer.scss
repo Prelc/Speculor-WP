@@ -1,9 +1,7 @@
 /* Footer */
 .footer {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
 	font-size: 14px;
+	text-align: center;
 	background-color: #ffffff;
 	box-shadow: $primary-box-shadow;
 	padding: 0 15px;
@@ -13,13 +11,39 @@
 		padding: 0 30px;
 	}
 
+	@include media-breakpoint-up(lg) {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
 	@include media-breakpoint-up(xl) {
 		padding: 0 60px;
 	}
 
 	&__left,
 	&__right {
-		padding-top: 19px;
-		padding-bottom: 18px;
+		padding-top: ptr(19);
+		padding-bottom: ptr(18);
+	}
+
+	&__left {
+		@include media-breakpoint-up(lg) {
+			text-align: left;
+		}
+
+		+ .footer__right {
+			padding-top: 0;
+
+			@include media-breakpoint-up(lg) {
+				padding-top: ptr(19);
+			}
+		}
+	}
+
+	&__right {
+		@include media-breakpoint-up(lg) {
+			text-align: right;
+		}
 	}
 }
