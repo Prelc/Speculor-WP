@@ -3,10 +3,15 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	flex-flow: row wrap;
 	background-color: #ffffff;
 	box-shadow: $primary-box-shadow;
 	min-height: 90px;
 	margin-bottom: 60px;
+
+	@include media-breakpoint-up(lg) {
+		flex-flow: row nowrap;
+	}
 
 	&__heading {
 		font-family: $secondary-font;
@@ -37,6 +42,14 @@
 			.header__heading {
 				color: #000000;
 			}
+		}
+	}
+
+	&__navigation {
+		width: 100%;
+
+		@include media-breakpoint-up(lg) {
+			width: auto;
 		}
 	}
 
