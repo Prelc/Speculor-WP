@@ -129,8 +129,8 @@
 			color: $gray;
 			border: 2px solid #dddddd;
 			border-radius: 45px;
-			height: ptr(45);
-			padding: 0 ptr(60) 0 ptr(20);
+			height: 45px;
+			padding: 0 60px 0 20px;
 			transition: $primary-transition;
 
 			&:hover {
