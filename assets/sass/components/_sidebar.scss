@@ -1,7 +1,10 @@
 /* Sidebar */
 .sidebar {
 	font-size: 14px;
-	padding-left: 26px;
+
+	@include media-breakpoint-up(lg) {
+		padding-left: 26px;
+	}
 
 	.widget {
 		background-color: #ffffff;
