@@ -38,7 +38,7 @@
 		?>
 
 		<!-- Toggle button for Main Navigation on mobile -->
-		<button class="btn  btn-primary  header__navbar-toggler  hidden-lg-up" type="button" data-toggle="collapse" data-target="#speculor-main-navigation"><span><?php esc_html_e( 'menu' , 'speculor' ); ?></span></button>
+		<button class="btn  btn-dark  header__navbar-toggler  hidden-lg-up" type="button" data-toggle="collapse" data-target="#speculor-main-navigation"><span><?php esc_html_e( 'menu' , 'speculor' ); ?></span></button>
 
 		<!-- Navigation -->
 		<nav class="header__navigation  collapse  navbar-toggleable-md" id="speculor-main-navigation">
