@@ -1667,14 +1667,14 @@ input[type="checkbox"].disabled {
 
 .btn {
   display: inline-block;
-  font-weight: normal;
+  font-weight: bold;
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
   cursor: pointer;
   user-select: none;
   border: 1px solid transparent;
-  padding: 0.375rem 1rem;
+  padding: 10px 20px;
   font-size: 1rem;
   line-height: 1.67;
   border-radius: 2px; }
@@ -3000,6 +3000,13 @@ blockquote {
       text-decoration: none; }
       .header__heading-link:focus .header__heading, .header__heading-link:hover .header__heading {
         color: #000000; }
+  .header__navbar-toggler {
+    margin-right: 15px; }
+    @media (min-width: 768px) {
+      .header__navbar-toggler {
+        margin-right: 30px; } }
+    .header__navbar-toggler:focus, .header__navbar-toggler:hover, .header__navbar-toggler:active:focus {
+      outline: none; }
   .header + .header-widgets,
   .header + .page-header {
     margin-top: -60px; }
@@ -3044,8 +3051,10 @@ blockquote {
 
 /* Sidebar */
 .sidebar {
-  font-size: 14px;
-  padding-left: 26px; }
+  font-size: 14px; }
+  @media (min-width: 992px) {
+    .sidebar {
+      padding-left: 26px; } }
   .sidebar .widget {
     background-color: #ffffff;
     border: 1px solid #eeeeee;
@@ -3244,6 +3253,37 @@ blockquote {
         border: 2px solid #fec729; }
       .main-navigation .featured a::before {
         display: none; }
+
+/* Buttons */
+.btn {
+  font-family: "Montserrat", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  border-radius: 2px;
+  transition: all 100ms ease-out; }
+  .btn-rounded {
+    border-radius: 45px; }
+  .btn-primary {
+    color: #272727; }
+    .btn-primary:focus, .btn-primary:hover {
+      background-color: #fec729;
+      color: #272727;
+      border-color: #fec729; }
+  .btn-secondary {
+    background-color: #009fb7;
+    color: #ffffff;
+    border-color: #009fb7; }
+    .btn-secondary:focus, .btn-secondary:hover {
+      background-color: #008498;
+      color: #ffffff;
+      border-color: #008498; }
+  .btn-dark {
+    background-color: #272727;
+    color: #ffffff;
+    border-color: #272727; }
+    .btn-dark:focus, .btn-dark:hover {
+      background-color: #181818;
+      color: #ffffff;
+      border-color: #181818; }
 
 /* Pagination */
 .pagination {

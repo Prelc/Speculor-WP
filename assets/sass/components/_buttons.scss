@@ -1,0 +1,48 @@
+/* Buttons */
+.btn {
+	font-family: $secondary-font;
+	font-size: 14px;
+	border-radius: $border-radius;
+	transition: $primary-transition;
+
+	&-rounded {
+		border-radius: 45px;
+	}
+
+	&-primary {
+		color: $gray-dark;
+
+		&:focus,
+		&:hover {
+			background-color: darken($brand-primary, 12);
+			color: $gray-dark;
+			border-color: darken($brand-primary, 12);
+		}
+	}
+
+	&-secondary {
+		background-color: $brand-secondary;
+		color: #ffffff;
+		border-color: $brand-secondary;
+
+		&:focus,
+		&:hover {
+			background-color: darken($brand-secondary, 6);
+			color: #ffffff;
+			border-color: darken($brand-secondary, 6);
+		}
+	}
+
+	&-dark {
+		background-color: $gray-dark;
+		color: #ffffff;
+		border-color: $gray-dark;
+
+		&:focus,
+		&:hover {
+			background-color: darken($gray-dark, 6);
+			color: #ffffff;
+			border-color: darken($gray-dark, 6);
+		}
+	}
+}
