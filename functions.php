@@ -108,9 +108,6 @@ add_action( 'after_setup_theme', 'speculor_content_width', 0 );
  * Enqueue scripts and styles.
  */
 function speculor_scripts() {
-	wp_enqueue_style( 'speculor-style', get_stylesheet_uri(), 'dashicons' );
-	wp_enqueue_style( 'dashicons' );
-
 	wp_enqueue_style( 'speculor-style', get_stylesheet_uri() );
 
 	// array for main.js dependencies
