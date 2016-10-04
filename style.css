@@ -3047,15 +3047,15 @@ blockquote {
 /* Page Header */
 .page-header {
   text-align: center;
-  padding-top: 48px;
-  padding-bottom: 51px;
+  padding-top: 2.66667rem;
+  padding-bottom: 2.83333rem;
   margin-bottom: 0; }
   .page-header__title {
-    font-size: 30px;
+    font-size: 1.66667rem;
     margin-bottom: 0; }
   .page-header__subtitle {
-    font-size: 16px;
-    margin-top: 12px;
+    font-size: 0.88889rem;
+    margin-top: 0.66667rem;
     margin-bottom: 0; }
 
 /* Sidebar */
