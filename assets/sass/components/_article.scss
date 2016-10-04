@@ -24,11 +24,10 @@
 
 		&-container {
 			margin: -15px;
-			margin-bottom: 15px;
+			margin-bottom: ptr(40);
 
 			@include media-breakpoint-up(sm) {
 				margin: -45px;
-				margin-bottom: 40px;
 			}
 
 			.single & {
