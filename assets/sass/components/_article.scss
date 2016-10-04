@@ -4,12 +4,18 @@
 	border: 1px solid #eeeeee;
 	border-radius: $border-radius;
 	box-shadow: $primary-box-shadow;
-	padding: 45px 45px 37px;
+	padding: 15px 15px 7px;
 	margin-bottom: 30px;
+
+	@include media-breakpoint-up(sm) {
+		padding: 45px 45px 37px;
+	}
 
 	.page &,
 	.single & {
-		padding: 52px 90px 51px;
+		@include media-breakpoint-up(sm) {
+			padding: 52px 90px 51px;
+		}
 	}
 
 	&__featured-image {
@@ -17,24 +23,31 @@
 		border-top-right-radius: $border-radius;
 
 		&-container {
-			margin: -45px;
-			margin-bottom: 40px;
+			margin: -15px;
+			margin-bottom: 15px;
+
+			@include media-breakpoint-up(sm) {
+				margin: -45px;
+				margin-bottom: 40px;
+			}
 
 			.single & {
-				margin: -52px -90px 55px;
+				@include media-breakpoint-up(sm) {
+					margin: -52px -90px 55px;
+				}
 			}
 		}
 	}
 
 	&__meta {
 		font-family: $secondary-font;
-		font-size: 12px;
+		font-size: ptr(12);
 		text-transform: uppercase;
 		color: $gray-lighter;
-		margin-bottom: 4px;
+		margin-bottom: ptr(4);
 
 		.single & {
-			margin-bottom: 2px;
+			margin-bottom: ptr(2);
 		}
 
 		a {
@@ -48,17 +61,17 @@
 		}
 
 		.meta__separator {
-			margin: 0 10px;
+			margin: 0 ptr(10);
 		}
 	}
 
 	&__title {
-		font-size: 26px;
-		margin-bottom: 28px;
+		font-size: ptr(26);
+		margin-bottom: ptr(28);
 
 		.single & {
-			font-size: 30px;
-			margin-bottom: 41px;
+			font-size: ptr(30);
+			margin-bottom: ptr(41);
 		}
 
 		a {
@@ -67,11 +80,11 @@
 	}
 
 	&__content {
-		font-size: 16px;
+		font-size: ptr(16);
 
 		.page &,
 		.single & {
-			font-size: 18px;
+			font-size: ptr(18);
 		}
 
 		// Content Margins
@@ -88,12 +101,12 @@
 		h4,
 		h5,
 		h6 {
-			margin-bottom: 24px;
+			margin-bottom: ptr(24);
 		}
 
 		// Content Margins
 		blockquote {
-			margin-bottom: 53px;
+			margin-bottom: ptr(53);
 		}
 
 		// Content Margins
@@ -102,10 +115,10 @@
 		ul,
 		ol,
 		p {
-			margin-bottom: 26px;
+			margin-bottom: ptr(26);
 
 			+ blockquote {
-				margin-top: 52px;
+				margin-top: ptr(52);
 			}
 
 			+ h1,
@@ -114,7 +127,7 @@
 			+ h4,
 			+ h5,
 			+ h6 {
-				margin-top: 52px;
+				margin-top: ptr(52);
 			}
 		}
 
@@ -129,9 +142,10 @@
 		pre,
 		img,
 		figure,
-		table {
-			margin-top: 51px;
-			margin-bottom: 50px;
+		table,
+		.embed-responsive {
+			margin-top: ptr(51);
+			margin-bottom: ptr(50);
 
 			+ h1,
 			+ h2,
@@ -139,7 +153,7 @@
 			+ h4,
 			+ h5,
 			+ h6 {
-				margin-top: 46px;
+				margin-top: ptr(46);
 			}
 		}
 
@@ -147,21 +161,21 @@
 		p {
 			> a > img {
 				display: inline-block;
-				margin-top: 25px;
-				margin-bottom: 23px;
+				margin-top: ptr(25);
+				margin-bottom: ptr(23);
 			}
 
 			> img {
 				display: inline-block;
-				margin-top: 25px;
-				margin-bottom: 23px;
+				margin-top: ptr(25);
+				margin-bottom: ptr(23);
 			}
 		}
 
 		.alignleft,
 		.alignright {
 			margin-top: 0;
-			margin-bottom: 35px;
+			margin-bottom: ptr(35);
 		}
 
 		// Content Margins
@@ -174,8 +188,8 @@
 	}
 
 	&__tags {
-		margin-top: 50px;
-		margin-bottom: 20px;
+		margin-top: ptr(50);
+		margin-bottom: ptr(20);
 
 		.single & {
 			margin-bottom: 0;
@@ -186,10 +200,10 @@
 	.more-link {
 		display: block;
 		font-family: $secondary-font;
-		font-size: 14px;
+		font-size: ptr(14);
 		font-weight: bold;
 		text-transform: uppercase;
-		margin-top: -10px;
+		margin-top: ptr(-10);
 
 		&:focus,
 		&:hover {
