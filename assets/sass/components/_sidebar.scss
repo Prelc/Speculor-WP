@@ -6,6 +6,13 @@
 		padding-left: 26px;
 	}
 
+	&--left {
+		@include media-breakpoint-up(lg) {
+			padding-left: 0;
+			padding-right: 26px;
+		}
+	}
+
 	.widget {
 		background-color: #ffffff;
 		border: 1px solid #eeeeee;
