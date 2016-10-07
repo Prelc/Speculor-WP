@@ -26,7 +26,7 @@ get_template_part( 'template-parts/page-header' );
 	<div class="content-area  container">
 		<div class="row">
 			<!-- Main Content -->
-			<main class="col-xs-12<?php echo 'left' === $speculor_layout ? '  col-lg-8  col-lg-push-4' : ''; ?><?php echo 'right' === $speculor_layout ? '  col-lg-8' : ''; ?><?php echo 'narrow' === $speculor_layout ? '  col-lg-8  offset-lg-2' : ''; ?>">
+			<main class="col-xs-12<?php echo 'left' === $speculor_layout ? '  col-lg-8  push-lg-4' : ''; ?><?php echo 'right' === $speculor_layout ? '  col-lg-8' : ''; ?><?php echo 'narrow' === $speculor_layout ? '  col-lg-8  offset-lg-2' : ''; ?>">
 				<?php
 				while ( have_posts() ) : the_post();
 
@@ -57,7 +57,7 @@ get_template_part( 'template-parts/page-header' );
 			<?php
 			if ( ( 'wide' !== $speculor_layout && 'narrow' !== $speculor_layout ) && is_active_sidebar( 'regular-page-sidebar' ) ) : ?>
 				<!-- Sidebar -->
-				<div class="col-xs-12  col-lg-4<?php echo 'left' === $speculor_layout ? '  col-lg-pull-8' : ''; ?>">
+				<div class="col-xs-12  col-lg-4<?php echo 'left' === $speculor_layout ? '  pull-lg-8' : ''; ?>">
 					<div class="sidebar  sidebar--page">
 						<?php dynamic_sidebar( 'regular-page-sidebar' ); ?>
 					</div>
