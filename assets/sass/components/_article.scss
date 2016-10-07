@@ -28,6 +28,7 @@
 
 			@include media-breakpoint-up(sm) {
 				margin: -45px;
+				margin-bottom: ptr(40);
 			}
 
 			.single & {

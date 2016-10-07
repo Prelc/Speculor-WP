@@ -3886,7 +3886,8 @@ pre {
       margin-bottom: 2.22222rem; }
       @media (min-width: 544px) {
         .article__featured-image-container {
-          margin: -45px; } }
+          margin: -45px;
+          margin-bottom: 2.22222rem; } }
       @media (min-width: 544px) {
         .single .article__featured-image-container {
           margin: -52px -90px 55px; } }
