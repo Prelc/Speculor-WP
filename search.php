@@ -54,7 +54,7 @@ get_template_part( 'template-parts/page-header' );
 			if ( ( 'wide' !== $speculor_layout && 'narrow' !== $speculor_layout ) && is_active_sidebar( 'blog-sidebar' ) ) : ?>
 				<!-- Sidebar -->
 				<div class="col-xs-12  col-lg-4<?php echo 'left' === $speculor_layout ? '  pull-lg-8' : ''; ?>">
-					<div class="sidebar  sidebar--blog">
+					<div class="sidebar  sidebar--blog<?php echo 'left' === $speculor_layout ? '  sidebar--left' : ''; ?>">
 						<?php dynamic_sidebar( 'blog-sidebar' ); ?>
 					</div>
 				</div>

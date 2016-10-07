@@ -2944,6 +2944,10 @@ blockquote {
   @media (min-width: 992px) {
     .sidebar {
       padding-left: 26px; } }
+  @media (min-width: 992px) {
+    .sidebar--left {
+      padding-left: 0;
+      padding-right: 26px; } }
   .sidebar .widget {
     background-color: #ffffff;
     border: 1px solid #eeeeee;
@@ -3964,6 +3968,7 @@ pre {
       border-color: #009fb7; }
     .comments__button:focus:hover {
       background-color: #008498;
+      color: #ffffff;
       border-color: #008498; }
   .comments .children {
     list-style: none; }
