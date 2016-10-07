@@ -1,18 +1,18 @@
 /* Page Header */
 .page-header {
 	text-align: center;
-	padding-top: 48px;
-	padding-bottom: 51px;
+	padding-top: ptr(48);
+	padding-bottom: ptr(51);
 	margin-bottom: 0;
 
 	&__title {
-		font-size: 30px;
+		font-size: ptr(30);
 		margin-bottom: 0;
 	}
 
 	&__subtitle {
-		font-size: 16px;
-		margin-top: 12px;
+		font-size: ptr(16);
+		margin-top: ptr(12);
 		margin-bottom: 0;
 	}
 }

@@ -10,7 +10,7 @@
     "bower_components"
   ],
   "dependencies": {
-    "bootstrap": "v4.0.0-alpha.2",
+    "bootstrap": "v4.0.0-alpha.4",
     "font-awesome": "~4.6.0"
   },
   "devDependencies": {
