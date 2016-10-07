@@ -13,9 +13,7 @@
 	<!-- Post Thumbnail -->
 	<div class="article__featured-image-container">
 		<?php if ( has_post_thumbnail() ) : ?>
-			<a href="<?php the_permalink(); ?>">
-				<?php the_post_thumbnail( 'post-thumbnail', array( 'class' => 'article__featured-image  img-fluid' ) ); ?>
-			</a>
+			<?php the_post_thumbnail( 'post-thumbnail', array( 'class' => 'article__featured-image  img-fluid' ) ); ?>
 		<?php endif; ?>
 	</div>
 	<!-- Meta -->
