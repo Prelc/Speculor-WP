@@ -21,15 +21,25 @@ get_template_part( 'template-parts/page-header' );
 
 					get_template_part( 'template-parts/content', 'single' );
 
-				?>
+					// If comments are open or we have at least one comment, load up the comment template.
+					if ( comments_open() || get_comments_number() ) :
+					?>
+					<a class="btn  btn-secondary  btn-block  btn-rounded  comments__button" data-toggle="collapse" href="#collapseComments" aria-expanded="false" aria-controls="collapseComments">
+						<?php
+							printf( // WPCS: XSS OK.
+								esc_html( _nx( 'Show 1 comment', 'Show %1$s comments', get_comments_number(), 'comments title', 'speculor' ) ),
+								number_format_i18n( get_comments_number() ),
+								'<span>' . get_the_title() . '</span>'
+							);
+						?>
+					</a>
+					<div class="collapse" id="collapseComments">
+						<?php comments_template(); ?>
+					</div>
 
 				<?php
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
 				endif;
-
-				endwhile; // End of the loop.
+					endwhile; // End of the loop.
 				?>
 			</main>
 			<!-- Sidebar -->
