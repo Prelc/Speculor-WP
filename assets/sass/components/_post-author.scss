@@ -1,0 +1,36 @@
+/* Post Author */
+.post-author {
+	text-align: center;
+	background-color: #ffffff;
+	border: 1px solid #eeeeee;
+	box-shadow: $primary-box-shadow;
+	padding: 30px;
+	margin-bottom: 30px;
+
+	@include media-breakpoint-up(sm) {
+		text-align: left;
+		display: flex;
+		align-items: center;
+	}
+
+	img {
+		border-radius: 50%;
+		margin-bottom: 15px;
+
+		@include media-breakpoint-up(sm) {
+			margin-bottom: 0;
+			margin-right: 30px;
+		}
+	}
+
+	&__name {
+		margin-bottom: 0;
+		font-size: 18px;
+	}
+
+	&__description {
+		margin-top: 7px;
+		margin-bottom: 0;
+		font-size: 14px;
+	}
+}

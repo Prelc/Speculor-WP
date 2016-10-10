@@ -3269,6 +3269,34 @@ blockquote {
   .pagination .next {
     float: right; }
 
+/* Post Author */
+.post-author {
+  text-align: center;
+  background-color: #ffffff;
+  border: 1px solid #eeeeee;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  padding: 30px;
+  margin-bottom: 30px; }
+  @media (min-width: 544px) {
+    .post-author {
+      text-align: left;
+      display: flex;
+      align-items: center; } }
+  .post-author img {
+    border-radius: 50%;
+    margin-bottom: 15px; }
+    @media (min-width: 544px) {
+      .post-author img {
+        margin-bottom: 0;
+        margin-right: 30px; } }
+  .post-author__name {
+    margin-bottom: 0;
+    font-size: 18px; }
+  .post-author__description {
+    margin-top: 7px;
+    margin-bottom: 0;
+    font-size: 14px; }
+
 /* WordPress Specific */
 .alignnone,
 .aligncenter,
@@ -3750,7 +3778,7 @@ pre {
   border: 1px solid #eeeeee;
   border-radius: 2px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-  padding: 15px 15px 7px;
+  padding: 15px 15px 23px;
   margin-bottom: 30px; }
   @media (min-width: 544px) {
     .article {
@@ -3964,6 +3992,7 @@ pre {
       border-color: #009fb7; }
     .comments__button:focus:hover {
       background-color: #008498;
+      color: #ffffff;
       border-color: #008498; }
   .comments .children {
     list-style: none; }
