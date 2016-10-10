@@ -3275,13 +3275,14 @@ blockquote {
   background-color: #ffffff;
   border: 1px solid #eeeeee;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-  padding: 30px;
+  padding: 15px;
   margin-bottom: 30px; }
   @media (min-width: 544px) {
     .post-author {
       text-align: left;
       display: flex;
-      align-items: center; } }
+      align-items: center;
+      padding: 30px; } }
   .post-author img {
     border-radius: 50%;
     margin-bottom: 15px; }
@@ -3981,7 +3982,7 @@ pre {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
   padding: 15px;
   margin-bottom: 30px; }
-  @media (min-width: 992px) {
+  @media (min-width: 544px) {
     .comments {
       padding: 30px; } }
   .comments__list {

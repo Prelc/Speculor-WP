@@ -4,13 +4,14 @@
 	background-color: #ffffff;
 	border: 1px solid #eeeeee;
 	box-shadow: $primary-box-shadow;
-	padding: 30px;
+	padding: 15px;
 	margin-bottom: 30px;
 
 	@include media-breakpoint-up(sm) {
 		text-align: left;
 		display: flex;
 		align-items: center;
+		padding: 30px;
 	}
 
 	img {
