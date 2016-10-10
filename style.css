@@ -3979,11 +3979,19 @@ pre {
   background-color: #ffffff;
   border: 1px solid #eeeeee;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-  padding: 30px;
+  padding: 15px;
   margin-bottom: 30px; }
+  @media (min-width: 992px) {
+    .comments {
+      padding: 30px; } }
   .comments__list {
     list-style: none;
+    margin-bottom: 0;
     padding-left: 0; }
+    .comments__list > .comment:last-of-type .comment-body {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: 0; }
   .comments__button {
     text-transform: uppercase;
     margin-bottom: 30px; }
@@ -3998,8 +4006,9 @@ pre {
     list-style: none; }
 
 .comment-body {
-  position: relative;
-  margin-bottom: 3.33333rem; }
+  border-bottom: 1px dashed #eff1f3;
+  padding-bottom: 23px;
+  margin-bottom: 30px; }
 
 .comment-meta {
   display: inline-block;
@@ -4012,8 +4021,8 @@ pre {
 
 .comment-author .avatar {
   border-radius: 50%;
-  margin-right: 0.83333rem;
-  margin-bottom: 1.11111rem;
+  margin-right: 15px;
+  margin-bottom: 20px;
   float: left; }
 
 .comment-author .says {
@@ -4021,103 +4030,117 @@ pre {
 
 .comment-author .fn {
   display: block;
-  padding-top: 0.66667rem;
+  font-size: 18px;
   vertical-align: top;
   color: #272727;
-  margin-right: 0.83333rem; }
+  margin-right: 15px;
+  padding-top: 12px; }
   .comment-author .fn a {
     color: #272727;
     vertical-align: top; }
 
 .comment-metadata {
-  font-size: 0.77778rem;
-  margin-bottom: 0.55556rem;
-  margin-top: -0.27778rem; }
+  font-size: 12px;
+  font-weight: normal;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  margin-top: -2px; }
   .comment-metadata a {
-    color: #bbbbbb; }
+    color: #aaaaaa; }
   .comment-metadata .comment-edit-link {
     color: #009fb7; }
   .comment-metadata time {
-    margin-right: 0.55556rem; }
+    margin-right: 10px; }
 
 .comment-content {
-  border: 1px solid rgba(0, 0, 0, 0.07);
-  border-radius: 2px;
-  padding: 1.05556rem 1.66667rem 3.27778rem;
-  font-family: "Lora", Georgia, "Times New Roman", Times, serif; }
+  font-family: "Lora", Georgia, "Times New Roman", Times, serif;
+  font-size: 16px; }
   .comment-content > p:last-of-type {
     margin-bottom: 0; }
 
-.comment .reply {
-  position: absolute;
-  bottom: 1.22222rem;
-  left: 1.66667rem; }
-  .comment .reply a {
-    font-size: 0.77778rem;
-    color: #bbbbbb;
-    font-family: "Lora", Georgia, "Times New Roman", Times, serif; }
-    .comment .reply a:hover {
-      color: #009fb7; }
+.comment .reply a {
+  font-size: 14px;
+  color: #bbbbbb;
+  font-family: "Lora", Georgia, "Times New Roman", Times, serif; }
+  .comment .reply a:hover {
+    color: #009fb7; }
 
 .comment .comment-respond {
   margin-bottom: 60px; }
   .comment .comment-respond .form-submit {
     margin-bottom: 0; }
 
-.comment-respond {
-  position: relative;
-  margin-top: 81px; }
-  .comments__list + .comment-respond {
-    margin-top: 60px; }
-  .comment-body + .comment-respond {
-    margin-top: 0; }
-  .comment-respond .comment-form {
-    padding-top: 18px; }
-  .comment-respond .comment-notes,
-  .comment-respond .logged-in-as {
-    display: none; }
-  .comment-respond label {
-    display: block;
-    font-size: 14px; }
-  .comment-respond textarea {
-    width: 100%; }
-  .comment-respond input {
-    width: 100%; }
-    @media (min-width: 992px) {
-      .comment-respond input {
-        width: 50%; } }
-  .comment-respond textarea,
-  .comment-respond input {
-    font-family: "Lora", Georgia, "Times New Roman", Times, serif;
-    font-size: 14px;
-    border: 1px solid #aaaaaa;
-    border-radius: 2px;
-    outline: none;
-    padding: 10px 18px; }
-    .comment-respond textarea:focus,
-    .comment-respond input:focus {
-      border: 1px solid #272727;
-      color: #272727; }
-  .comment-respond .comment-form-comment {
-    margin-bottom: 0.72222rem; }
-  .comment-respond .comment-form-url,
-  .comment-respond .comment-form-email,
-  .comment-respond .comment-form-author {
-    margin-bottom: 1.16667rem; }
-  .comment-respond .form-submit {
-    margin-top: 30px;
-    margin-bottom: 12px; }
-  .comment-respond .submit {
-    width: auto;
-    font-family: "Montserrat", Helvetica, Arial, sans-serif;
-    background-color: #fed766;
-    color: #ffffff;
-    border-radius: 2px;
-    border-color: #fed766; }
-    .comment-respond .submit:focus, .comment-respond .submit:hover {
-      color: #ffffff;
-      border-color: #fed04d;
-      background-color: #fed04d; }
+.comment-reply-title {
+  font-size: 14px;
+  text-transform: uppercase;
+  border-bottom: 1px solid #eff1f3;
+  padding-bottom: 13px;
+  margin-bottom: 23px; }
+
+.comments__list + .comment-respond {
+  margin-top: 50px; }
+
+.comment-body + .comment-respond {
+  margin-top: 0; }
+
+.comment-respond .comment-notes,
+.comment-respond .logged-in-as {
+  display: none; }
+
+.comment-respond label {
+  display: block;
+  font-size: 14px;
+  text-transform: lowercase; }
+
+.comment-respond textarea {
+  width: 100%; }
+
+.comment-respond input {
+  width: 100%; }
+  @media (min-width: 992px) {
+    .comment-respond input {
+      width: 50%; } }
+
+.comment-respond textarea,
+.comment-respond input {
+  font-family: "Lora", Georgia, "Times New Roman", Times, serif;
+  font-size: 16px;
+  border: 2px solid #dddddd;
+  border-radius: 4px;
+  outline: none;
+  padding: 10px 18px; }
+  .comment-respond textarea:focus,
+  .comment-respond input:focus {
+    border: 2px solid #696773;
+    color: #272727; }
+
+.comment-respond .comment-form-comment {
+  margin-bottom: 0.72222rem; }
+
+.comment-respond .comment-form-url,
+.comment-respond .comment-form-email,
+.comment-respond .comment-form-author {
+  margin-bottom: 1.16667rem; }
+
+.comment-respond .form-submit {
+  margin-top: 30px;
+  margin-bottom: 12px; }
+
+.comment-respond .submit {
+  width: auto;
+  font-family: "Montserrat", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: #fed766;
+  color: #272727;
+  border-radius: 2px;
+  border-color: #fed766;
+  padding: 10px 30px; }
+  .comment-respond .submit:focus, .comment-respond .submit:hover {
+    color: #272727;
+    border-color: #fec729;
+    background-color: #fec729; }
 
 /*!
  *  Font Awesome 4.6.3 by @davegandy - http://fontawesome.io - @fontawesome

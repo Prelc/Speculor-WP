@@ -5,12 +5,27 @@
 	background-color: #ffffff;
 	border: 1px solid #eeeeee;
 	box-shadow: $primary-box-shadow;
-	padding: 30px;
+	padding: 15px;
 	margin-bottom: 30px;
+
+	@include media-breakpoint-up(lg) {
+		padding: 30px;
+	}
 
 	&__list {
 		list-style: none;
+		margin-bottom: 0;
 		padding-left: 0;
+
+		> .comment {
+			&:last-of-type {
+				.comment-body {
+					margin-bottom: 0;
+					padding-bottom: 0;
+					border-bottom: 0;
+				}
+			}
+		}
 	}
 
 	&__button {
@@ -36,8 +51,9 @@
 
 .comment {
 	&-body {
-		position: relative;
-		margin-bottom: ptr(60);
+		border-bottom: 1px dashed $gray-lightest;
+		padding-bottom: 23px;
+		margin-bottom: 30px;
 	}
 
 	&-meta {
@@ -55,8 +71,8 @@
 	&-author {
 		.avatar {
 			border-radius: 50%;
-			margin-right: ptr(15);
-			margin-bottom: ptr(20);
+			margin-right: 15px;
+			margin-bottom: 20px;
 			float: left;
 		}
 
@@ -66,10 +82,11 @@
 
 		.fn {
 			display: block;
-			padding-top: ptr(12);
+			font-size: 18px;
 			vertical-align: top;
 			color: $gray-dark;
-			margin-right: ptr(15);
+			margin-right: 15px;
+			padding-top: 12px;
 
 			a {
 				color: $gray-dark;
@@ -79,12 +96,14 @@
 	}
 
 	&-metadata {
-		font-size: ptr(14);
-		margin-bottom: ptr(10);
-		margin-top: ptr(-5);
+		font-size: 12px;
+		font-weight: normal;
+		text-transform: uppercase;
+		margin-bottom: 10px;
+		margin-top: -2px;
 
 		a {
-			color: #bbbbbb;
+			color: #aaaaaa;
 		}
 
 		.comment-edit-link {
@@ -92,15 +111,13 @@
 		}
 
 		time {
-			margin-right: ptr(10);
+			margin-right: 10px;
 		}
 	}
 
 	&-content {
-		border: 1px solid rgba(0, 0, 0, .07);
-		border-radius: $border-radius;
-		padding: ptr(19) ptr(30) ptr(59);
 		font-family: $primary-font;
+		font-size: 16px;
 
 		> p {
 			&:last-of-type {
@@ -110,12 +127,8 @@
 	}
 
 	.reply {
-		position: absolute;
-		bottom: ptr(22);
-		left: ptr(30);
-
 		a {
-			font-size: ptr(14);
+			font-size: 14px;
 			color: #bbbbbb;
 			font-family: $primary-font;
 
@@ -132,22 +145,23 @@
 			margin-bottom: 0;
 		}
 	}
+
+	&-reply-title {
+		font-size: 14px;
+		text-transform: uppercase;
+		border-bottom: 1px solid $gray-lightest;
+		padding-bottom: 13px;
+		margin-bottom: 23px;
+	}
 }
 
 .comment-respond {
-	position: relative;
-	margin-top: 81px;
-
 	.comments__list + & {
-		margin-top: 60px;
+		margin-top: 50px;
 	}
 
 	.comment-body + & {
 		margin-top: 0;
-	}
-
-	.comment-form {
-		padding-top: 18px;
 	}
 
 	.comment-notes,
@@ -158,6 +172,7 @@
 	label {
 		display: block;
 		font-size: 14px;
+		text-transform: lowercase;
 	}
 
 	textarea {
@@ -175,14 +190,14 @@
 	textarea,
 	input {
 		font-family: $primary-font;
-		font-size: 14px;
-		border: 1px solid $gray-lighter;
-		border-radius: $border-radius;
+		font-size: 16px;
+		border: 2px solid #dddddd;
+		border-radius: 4px;
 		outline: none;
 		padding: 10px 18px;
 
 		&:focus {
-			border: 1px solid $gray-dark;
+			border: 2px solid $gray;
 			color: $gray-dark;
 		}
 	}
@@ -205,16 +220,20 @@
 	.submit {
 		width: auto;
 		font-family: $secondary-font;
+		font-size: 14px;
+		font-weight: bold;
+		text-transform: uppercase;
 		background-color: $brand-primary;
-		color: #ffffff;
+		color: $gray-dark;
 		border-radius: $border-radius;
 		border-color: $brand-primary;
+		padding: 10px 30px;
 
 		&:focus,
 		&:hover {
-			color: #ffffff;
-			border-color: darken($brand-primary, 5);
-			background-color: darken($brand-primary, 5);
+			color: $gray-dark;
+			border-color: darken($brand-primary, 12);
+			background-color: darken($brand-primary, 12);
 		}
 	}
 }
