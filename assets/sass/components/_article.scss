@@ -4,18 +4,11 @@
 	border: 1px solid #eeeeee;
 	border-radius: $border-radius;
 	box-shadow: $primary-box-shadow;
-	padding: 15px 15px 7px;
+	padding: 15px;
 	margin-bottom: 30px;
 
 	@include media-breakpoint-up(sm) {
-		padding: 45px 45px 37px;
-	}
-
-	.page &,
-	.single & {
-		@include media-breakpoint-up(sm) {
-			padding: 52px 90px 51px;
-		}
+		padding: 60px 60px 52px;
 	}
 
 	&__featured-image {
@@ -27,14 +20,8 @@
 			margin-bottom: ptr(40);
 
 			@include media-breakpoint-up(sm) {
-				margin: -45px;
+				margin: -60px;
 				margin-bottom: ptr(40);
-			}
-
-			.single & {
-				@include media-breakpoint-up(sm) {
-					margin: -52px -90px 55px;
-				}
 			}
 		}
 	}
