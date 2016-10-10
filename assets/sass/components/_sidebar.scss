@@ -10,8 +10,12 @@
 		background-color: #ffffff;
 		border: 1px solid #eeeeee;
 		box-shadow: $primary-box-shadow;
-		padding: 27px 30px 30px;
+		padding: 17px 15px 20px;
 		margin-bottom: 30px;
+
+		@include media-breakpoint-up(sm) {
+			padding: 27px 30px 30px;
+		}
 	}
 
 	&__heading {

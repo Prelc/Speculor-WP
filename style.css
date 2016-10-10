@@ -442,22 +442,22 @@ h1, h2, h3, h4, h5, h6,
   color: #272727; }
 
 h1, .h1 {
-  font-size: 2.5rem; }
+  font-size: 1.66667rem; }
 
 h2, .h2 {
-  font-size: 2rem; }
-
-h3, .h3 {
-  font-size: 1.75rem; }
-
-h4, .h4 {
   font-size: 1.5rem; }
 
+h3, .h3 {
+  font-size: 1.33333rem; }
+
+h4, .h4 {
+  font-size: 1.16667rem; }
+
 h5, .h5 {
-  font-size: 1.25rem; }
+  font-size: 1rem; }
 
 h6, .h6 {
-  font-size: 1rem; }
+  font-size: 0.88889rem; }
 
 .lead {
   font-size: 1.25rem;
@@ -2948,8 +2948,11 @@ blockquote {
     background-color: #ffffff;
     border: 1px solid #eeeeee;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-    padding: 27px 30px 30px;
+    padding: 17px 15px 20px;
     margin-bottom: 30px; }
+    @media (min-width: 544px) {
+      .sidebar .widget {
+        padding: 27px 30px 30px; } }
   .sidebar__heading {
     position: relative;
     font-size: 14px;
@@ -3779,15 +3782,11 @@ pre {
   border: 1px solid #eeeeee;
   border-radius: 2px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-  padding: 15px 15px 23px;
+  padding: 15px;
   margin-bottom: 30px; }
   @media (min-width: 544px) {
     .article {
-      padding: 45px 45px 37px; } }
-  @media (min-width: 544px) {
-    .page .article,
-    .single .article {
-      padding: 52px 90px 51px; } }
+      padding: 60px 60px 52px; } }
   .article__featured-image {
     border-top-left-radius: 2px;
     border-top-right-radius: 2px; }
@@ -3796,11 +3795,8 @@ pre {
       margin-bottom: 2.22222rem; }
       @media (min-width: 544px) {
         .article__featured-image-container {
-          margin: -45px;
+          margin: -60px;
           margin-bottom: 2.22222rem; } }
-      @media (min-width: 544px) {
-        .single .article__featured-image-container {
-          margin: -52px -90px 55px; } }
   .article__meta {
     font-family: "Montserrat", Helvetica, Arial, sans-serif;
     font-size: 0.66667rem;
