@@ -1,31 +1,20 @@
 // config
 require.config( {
 	paths: {
-		jquery:     'assets/js/fix.jquery',
-		util:       'bower_components/bootstrap/js/umd/util',
-		alert:      'bower_components/bootstrap/js/umd/alert',
-		button:     'bower_components/bootstrap/js/umd/button',
-		carousel:   'bower_components/bootstrap/js/umd/carousel',
-		collapse:   'bower_components/bootstrap/js/umd/collapse',
-		dropdown:   'bower_components/bootstrap/js/umd/dropdown',
-		modal:      'bower_components/bootstrap/js/umd/modal',
-		scrollspy:  'bower_components/bootstrap/js/umd/scrollspy',
-		tab:        'bower_components/bootstrap/js/umd/tab',
-		tooltip:    'bower_components/bootstrap/js/umd/tooltip',
-		popover:    'bower_components/bootstrap/js/umd/popover',
+		util:       'bower_components/bootstrap/js/dist/util',
+		alert:      'bower_components/bootstrap/js/dist/alert',
+		button:     'bower_components/bootstrap/js/dist/button',
+		carousel:   'bower_components/bootstrap/js/dist/carousel',
+		collapse:   'bower_components/bootstrap/js/dist/collapse',
+		dropdown:   'bower_components/bootstrap/js/dist/dropdown',
+		modal:      'bower_components/bootstrap/js/dist/modal',
+		scrollspy:  'bower_components/bootstrap/js/dist/scrollspy',
+		tab:        'bower_components/bootstrap/js/dist/tab',
+		tooltip:    'bower_components/bootstrap/js/dist/tooltip',
+		popover:    'bower_components/bootstrap/js/dist/popover',
 	},
 } );
 
-require.config( {
-	baseUrl: SpeculorVars.pathToTheme
-} );
-
-require( [
-	'jquery',
-	'util',
-	'collapse',
-	'dropdown',
-], function ( $, _ ) {
+require( [ 'collapse', 'dropdown' ], function () {
 	'use strict';
-
 } );
