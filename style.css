@@ -3551,6 +3551,37 @@ pre {
       margin-left: -60px;
       margin-right: -60px; } }
 
+.article__content .image-wide, .article__content
+.image-wide-top, .article__content
+.image-wide-bottom {
+  max-width: none;
+  margin-left: -15px;
+  width: calc(100% + 30px);
+  margin-right: -15px; }
+  @media (min-width: 544px) {
+    .article__content .image-wide, .article__content
+    .image-wide-top, .article__content
+    .image-wide-bottom {
+      width: calc(100% + 120px);
+      margin-left: -60px;
+      margin-right: -60px; } }
+
+.article__content .image-wide-top {
+  margin-top: -15px;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px; }
+  @media (min-width: 544px) {
+    .article__content .image-wide-top {
+      margin-top: -60px; } }
+
+.article__content .image-wide-bottom {
+  margin-bottom: -15px;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px; }
+  @media (min-width: 544px) {
+    .article__content .image-wide-bottom {
+      margin-bottom: -52px; } }
+
 /* WordPress Widgets */
 /* Applies to all widgets */
 .widget select,
