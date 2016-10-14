@@ -2867,6 +2867,7 @@ blockquote {
     font-family: "Montserrat", Helvetica, Arial, sans-serif;
     font-size: 36px;
     font-weight: bold;
+    letter-spacing: -0.5px;
     line-height: 1;
     color: #272727;
     padding-top: 24px;
@@ -3064,7 +3065,8 @@ blockquote {
     font-weight: bold;
     color: #696773;
     border-top: 1px solid #dddddd;
-    padding: 10.5px 5px; }
+    padding: 10.5px 5px;
+    transition: all 100ms ease-out; }
     @media (min-width: 992px) {
       .main-navigation a {
         border-top: 0;
@@ -3251,10 +3253,12 @@ blockquote {
     padding-top: 11px;
     padding-bottom: 11px;
     margin-left: 2px;
-    margin-right: 2px; }
+    margin-right: 2px;
+    transition: all 100ms ease-out; }
     .pagination .page-numbers:focus, .pagination .page-numbers:hover {
+      text-decoration: none;
       color: #272727;
-      text-decoration: none; }
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); }
   .pagination .current {
     background-color: #fed766;
     color: #272727; }
@@ -3396,9 +3400,7 @@ a > img.aligncenter {
 .wp-caption {
   max-width: 100%;
   /* Image does not overflow the content area */
-  background-color: rgba(0, 0, 0, 0.05);
-  padding: 5px;
-  text-align: center; }
+  font-size: 14px; }
   .wp-caption.alignnone {
     margin: 5px 0 20px; }
   .wp-caption.alignleft {
@@ -3412,8 +3414,7 @@ a > img.aligncenter {
     padding: 0;
     width: auto; }
   .wp-caption .wp-caption-text {
-    line-height: 17px;
-    margin: 4px 5px; }
+    margin-top: 5px; }
 
 .gallery {
   margin-bottom: 20px; }
@@ -4152,7 +4153,8 @@ pre {
   border: 2px solid #dddddd;
   border-radius: 4px;
   outline: none;
-  padding: 10px 18px; }
+  padding: 10px 18px;
+  transition: all 100ms ease-out; }
   .comment-respond textarea:focus,
   .comment-respond input:focus {
     border: 2px solid #696773;
