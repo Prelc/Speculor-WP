@@ -62,9 +62,3 @@ gulp.task('js', function() {
   .pipe(uglify())
   .pipe(gulp.dest('.')); // pipe it to the output DIR
 });
-
-// Font Awesome
-gulp.task('icons', function() { 
-  return gulp.src('bower_components/font-awesome/fonts/**.*') 
-    .pipe(gulp.dest('./assets/fonts')); 
-});
