@@ -275,6 +275,16 @@ pre {
 			margin-top: -60px;
 		}
 	}
+
+	.search & {
+		margin-top: 0;
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;
+
+		@include media-breakpoint-up(sm) {
+			margin-top: 0;
+		}
+	}
 }
 
 .image-wide-bottom {

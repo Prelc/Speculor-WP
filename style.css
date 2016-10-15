@@ -2647,7 +2647,7 @@ html {
 body {
   background-color: #eff1f3; }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   letter-spacing: -0.5px; }
 
 img, figure {
@@ -3422,6 +3422,14 @@ pre {
   @media (min-width: 544px) {
     .article__content .image-wide-top {
       margin-top: -60px; } }
+
+.search .image-wide-top {
+  margin-top: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0; }
+  @media (min-width: 544px) {
+    .search .image-wide-top {
+      margin-top: 0; } }
 
 .article__content .image-wide-bottom {
   margin-bottom: -15px;
@@ -6025,8 +6033,6 @@ pre {
 
 /*------------------------------------*	The End :)
 \*------------------------------------*/
-/*# sourceMappingURL=style.css.map */
-
 /*# sourceMappingURL=style.css.map */
 
 /*# sourceMappingURL=style.css.map */
