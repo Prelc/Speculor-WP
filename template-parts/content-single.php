@@ -29,7 +29,7 @@
 	</div>
 	<!-- Title -->
 	<?php
-		the_title( '<h1 class="article__title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h1>' );
+		the_title( '<h1 class="article__title">', '</h1>' );
 		if ( 'post' === get_post_type() ) : ?>
 	<?php
 	endif; ?>
