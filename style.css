@@ -4,7 +4,7 @@ Theme Name: Speculor
 Author: Marko Prelec
 Author URI: http://www.prelc.si
 Version: 0.0.0
-Description: Speculor is fast, clean and simple WordPress theme.
+Description: Speculor is fast, clean and powerful WordPress theme.
 Tags: custom-colors, featured-images, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, blog
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -3781,10 +3781,14 @@ pre {
     list-style: none;
     margin-bottom: 0;
     padding-left: 0; }
-    .comments__list > .comment:last-of-type .comment-body {
+    .comments__list > .comment:last-of-type > .comment-body {
       margin-bottom: 0;
       padding-bottom: 0;
       border-bottom: 0; }
+      .comments__list > .comment:last-of-type > .comment-body + .children {
+        border-top: 1px dashed #eff1f3;
+        padding-top: 23px;
+        margin-top: 30px; }
   .comments__button {
     text-transform: uppercase;
     margin-bottom: 30px; }
@@ -6021,8 +6025,6 @@ pre {
 
 /*------------------------------------*	The End :)
 \*------------------------------------*/
-/*# sourceMappingURL=style.css.map */
-
 /*# sourceMappingURL=style.css.map */
 
 /*# sourceMappingURL=style.css.map */
