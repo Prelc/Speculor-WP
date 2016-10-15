@@ -38,7 +38,7 @@
 	<!-- Content & Read more text -->
 	<div class="article__content">
 		<?php
-			the_content( sprintf(
+			the_excerpt( sprintf(
 				/* translators: %s: Name of current post. */
 				wp_kses( __( 'Read more', 'speculor' ), array( 'span' => array( 'class' => array() ) ) ),
 				the_title( '<span class="screen-reader-text">"', '"</span>', false )
