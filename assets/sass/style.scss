@@ -103,10 +103,53 @@ figure {
 	height: auto;
 }
 
+// Block code.
+pre {
+	background-color: #f8f8f8;
+	border-top: 1px solid #eeeeee;
+	border-bottom: 1px solid #eeeeee;
+	padding: 30px;
+	margin-left: -15px;
+	margin-right: -15px;
+
+	@include media-breakpoint-up(sm) {
+		margin-left: -60px;
+		margin-right: -60px;
+	}
+}
+
 blockquote {
-	border-left: ptr(3) solid $brand-primary;
-	padding-left: ptr(20);
+	position: relative;
 	font-style: italic;
+	background-color: #f8f8f8;
+	border-top: 1px solid #eeeeee;
+	border-bottom: 1px solid #eeeeee;
+	padding: 30px 60px 30px 125px;
+	margin-left: -15px;
+	margin-right: -15px;
+
+	@include media-breakpoint-up(sm) {
+		margin-left: -60px;
+		margin-right: -60px;
+	}
+
+	&::before {
+		position: absolute;
+		content: '“';
+		font-family: Georgia, "Times New Roman";
+		font-size: 100px;
+		color: #bbbbbb;
+		top: -5px;
+		left: 52px;
+	}
+
+	.article__content & {
+		p {
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+		}
+	}
 }
 
 /*------------------------------------*\

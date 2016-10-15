@@ -2654,10 +2654,41 @@ img, figure {
   max-width: 100%;
   height: auto; }
 
+pre {
+  background-color: #f8f8f8;
+  border-top: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
+  padding: 30px;
+  margin-left: -15px;
+  margin-right: -15px; }
+  @media (min-width: 544px) {
+    pre {
+      margin-left: -60px;
+      margin-right: -60px; } }
+
 blockquote {
-  border-left: 0.16667rem solid #fed766;
-  padding-left: 1.11111rem;
-  font-style: italic; }
+  position: relative;
+  font-style: italic;
+  background-color: #f8f8f8;
+  border-top: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
+  padding: 30px 60px 30px 125px;
+  margin-left: -15px;
+  margin-right: -15px; }
+  @media (min-width: 544px) {
+    blockquote {
+      margin-left: -60px;
+      margin-right: -60px; } }
+  blockquote::before {
+    position: absolute;
+    content: '“';
+    font-family: Georgia, "Times New Roman";
+    font-size: 100px;
+    color: #bbbbbb;
+    top: -5px;
+    left: 52px; }
+  .article__content blockquote p:last-of-type {
+    margin-bottom: 0; }
 
 /*------------------------------------*	04. Helpers and very general classes
 \*------------------------------------*/
@@ -3387,18 +3418,6 @@ td {
 
 th, td {
   padding: 0.55556rem; }
-
-pre {
-  background-color: #f8f8f8;
-  border-top: 1px solid #eeeeee;
-  border-bottom: 1px solid #eeeeee;
-  padding: 30px;
-  margin-left: -15px;
-  margin-right: -15px; }
-  @media (min-width: 544px) {
-    pre {
-      margin-left: -60px;
-      margin-right: -60px; } }
 
 .article__content .image-wide, .article__content
 .image-wide-top, .article__content

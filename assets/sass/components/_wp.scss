@@ -232,21 +232,6 @@ td {
 	padding: ptr(10);
 }
 
-// Block code.
-pre {
-	background-color: #f8f8f8;
-	border-top: 1px solid #eeeeee;
-	border-bottom: 1px solid #eeeeee;
-	padding: 30px;
-	margin-left: -15px;
-	margin-right: -15px;
-
-	@include media-breakpoint-up(sm) {
-		margin-left: -60px;
-		margin-right: -60px;
-	}
-}
-
 // Custom classes for wide images
 .image-wide,
 .image-wide-top,
