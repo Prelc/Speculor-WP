@@ -1,7 +1,7 @@
 Speculor WordPress Theme
 ===
 
-### Theme is still inder construction.
+Theme is still under construction.
 
 ### Theme Screenshot
 
