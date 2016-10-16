@@ -108,13 +108,14 @@ pre {
 	background-color: #f8f8f8;
 	border-top: 1px solid #eeeeee;
 	border-bottom: 1px solid #eeeeee;
-	padding: 30px;
+	padding: 30px 15px;
 	margin-left: -15px;
 	margin-right: -15px;
 
 	@include media-breakpoint-up(sm) {
 		margin-left: -60px;
 		margin-right: -60px;
+		padding: 30px 60px;
 	}
 }
 
@@ -124,11 +125,12 @@ blockquote {
 	background-color: #f8f8f8;
 	border-top: 1px solid #eeeeee;
 	border-bottom: 1px solid #eeeeee;
-	padding: 30px 60px 30px 125px;
+	padding: 30px 15px 30px 80px;
 	margin-left: -15px;
 	margin-right: -15px;
 
 	@include media-breakpoint-up(sm) {
+		padding: 30px 60px 30px 125px;
 		margin-left: -60px;
 		margin-right: -60px;
 	}
@@ -140,7 +142,11 @@ blockquote {
 		font-size: 100px;
 		color: #bbbbbb;
 		top: -5px;
-		left: 52px;
+		left: 15px;
+
+		@include media-breakpoint-up(sm) {
+			left: 52px;
+		}
 	}
 
 	.article__content & {
