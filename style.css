@@ -3775,6 +3775,16 @@ th, td {
     .article .more-link:focus, .article .more-link:hover {
       text-decoration: none; }
 
+/* Sticky */
+.sticky {
+  background-color: #fed766; }
+  .sticky .article__meta {
+    color: #696773; }
+    .sticky .article__meta a {
+      color: #696773; }
+  .sticky .article__content {
+    color: #272727; }
+
 /* Tags */
 .tags a {
   display: inline-block;
