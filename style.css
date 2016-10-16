@@ -2658,13 +2658,14 @@ pre {
   background-color: #f8f8f8;
   border-top: 1px solid #eeeeee;
   border-bottom: 1px solid #eeeeee;
-  padding: 30px;
+  padding: 30px 15px;
   margin-left: -15px;
   margin-right: -15px; }
   @media (min-width: 544px) {
     pre {
       margin-left: -60px;
-      margin-right: -60px; } }
+      margin-right: -60px;
+      padding: 30px 60px; } }
 
 blockquote {
   position: relative;
@@ -2672,11 +2673,12 @@ blockquote {
   background-color: #f8f8f8;
   border-top: 1px solid #eeeeee;
   border-bottom: 1px solid #eeeeee;
-  padding: 30px 60px 30px 125px;
+  padding: 30px 15px 30px 80px;
   margin-left: -15px;
   margin-right: -15px; }
   @media (min-width: 544px) {
     blockquote {
+      padding: 30px 60px 30px 125px;
       margin-left: -60px;
       margin-right: -60px; } }
   blockquote::before {
@@ -2686,7 +2688,10 @@ blockquote {
     font-size: 100px;
     color: #bbbbbb;
     top: -5px;
-    left: 52px; }
+    left: 15px; }
+    @media (min-width: 544px) {
+      blockquote::before {
+        left: 52px; } }
   .article__content blockquote p:last-of-type {
     margin-bottom: 0; }
 
@@ -2712,7 +2717,6 @@ blockquote {
       flex-flow: row wrap;
   background-color: #ffffff;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-  min-height: 90px;
   margin-bottom: 60px; }
   @media (min-width: 992px) {
     .header {
@@ -2729,6 +2733,13 @@ blockquote {
     padding-bottom: 30px;
     margin-bottom: 0; }
   .header__heading-link, .header .custom-logo-link {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    min-height: 90px;
     margin-left: 15px; }
     @media (min-width: 768px) {
       .header__heading-link, .header .custom-logo-link {
@@ -2746,6 +2757,7 @@ blockquote {
       .header__navigation {
         width: auto; } }
   .header__navbar-toggler {
+    margin-left: 15px;
     margin-right: 15px; }
     @media (min-width: 768px) {
       .header__navbar-toggler {
