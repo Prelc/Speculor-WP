@@ -5,4 +5,4 @@ Speculor WordPress Theme
 
 ### Theme Screenshot
 
-<img src="http://www.prelc.si/speculor/wp-content/themes/speculor/screenshot.jpg" alt="Speculor WordPress Theme">
+<img src="https://github.com/Prelc/Speculor-WP/blob/master/screenshot.jpg" alt="Speculor WordPress Theme">
