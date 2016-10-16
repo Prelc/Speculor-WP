@@ -43,6 +43,16 @@ function speculor_customizer( $wp_customize ) {
 	);
 
 	$wp_customize->add_section(
+		'section_page_header',
+		array(
+			'title' => __( 'Page Header', 'speculor' ),
+			'description' => __( 'Change page header options.', 'speculor' ),
+			'priority' => 35,
+			'panel'  => 'panel_theme-options',
+		)
+	);
+
+	$wp_customize->add_section(
 		'section_navigation',
 		array(
 			'title' => __( 'Navigation', 'speculor' ),
@@ -129,6 +139,15 @@ function speculor_customizer( $wp_customize ) {
 		array(
 			'default' => '#ffffff',
 			'sanitize_callback' => 'sanitize_hex_color',
+		)
+	);
+
+	// Page Header Settings
+	$wp_customize->add_setting(
+		'page_header_blog_title',
+		array(
+			'default' => esc_html__( 'blog', 'speculor' ),
+			'sanitize_callback' => 'wp_kses_post',
 		)
 	);
 
@@ -366,6 +385,18 @@ function speculor_customizer( $wp_customize ) {
 				'settings' => 'header_background_color',
 				'section' => 'section_header',
 			)
+		)
+	);
+
+	// Page Header Controls
+	$wp_customize->add_control(
+		'page_header_blog_title',
+		array(
+			'type' => 'text',
+			'label' => __( 'Page header blog title', 'speculor' ),
+			'description' => __( 'Works only if "Front page displays" is set on "Your latest posts".', 'speculor' ),
+			'priority' => 20,
+			'section' => 'section_page_header',
 		)
 	);
 

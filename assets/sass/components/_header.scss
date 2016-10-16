@@ -25,7 +25,8 @@
 		margin-bottom: 0;
 	}
 
-	&__heading-link {
+	&__heading-link,
+	.custom-logo-link {
 		margin-left: 15px;
 
 		@include media-breakpoint-up(md) {
