@@ -22,7 +22,7 @@ if ( is_home() || is_singular( 'post' ) ) {
 	$speculor_main_tag = 'h1';
 	// Index and single title.
 	if ( is_home() || ( is_single() && 'post' === get_post_type() ) ) {
-		$speculor_title    = 0 === $speculor_blog_id ? esc_html__( 'Blog', 'speculor' ) : get_the_title( $speculor_blog_id );
+		$speculor_title    = 0 === $speculor_blog_id ? esc_html__( get_theme_mod( 'page_header_blog_title', 'Blog', 'speculor' ) ) : get_the_title( $speculor_blog_id );
 
 		if ( is_single() ) {
 			$speculor_main_tag = 'p';
