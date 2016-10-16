@@ -19,10 +19,16 @@
 
 		> .comment {
 			&:last-of-type {
-				.comment-body {
+				> .comment-body {
 					margin-bottom: 0;
 					padding-bottom: 0;
 					border-bottom: 0;
+
+					+ .children {
+						border-top: 1px dashed $gray-lightest;
+						padding-top: 23px;
+						margin-top: 30px;
+					}
 				}
 			}
 		}
@@ -195,6 +201,7 @@
 		border-radius: 4px;
 		outline: none;
 		padding: 10px 18px;
+		transition: $primary-transition;
 
 		&:focus {
 			border: 2px solid $gray;

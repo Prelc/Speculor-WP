@@ -16,11 +16,13 @@
 		padding-bottom: 11px;
 		margin-left: 2px;
 		margin-right: 2px;
+		transition: $primary-transition;
 
 		&:focus,
 		&:hover {
-			color: $gray-dark;
 			text-decoration: none;
+			color: $gray-dark;
+			box-shadow: $primary-box-shadow-hover;
 		}
 	}
 

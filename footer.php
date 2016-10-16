@@ -13,7 +13,7 @@
 
 	<footer class="footer">
 		<div class="footer__left">
-			<?php echo wp_kses_post( get_theme_mod( 'footer_left', 'Speculor - WordPress theme made by <a href="https://twitter.com/prelc">Prelc</a>.' ) ); ?>
+			<?php echo wp_kses_post( get_theme_mod( 'footer_left', sprintf( esc_html__( 'Speculor - WordPress theme made by %sPrelc%s.', 'speculor' ), '<a href="https://twitter.com/prelc">', '</a>' ) ) ); ?>
 		</div>
 		<div class="footer__right">
 			<?php echo wp_kses_post( get_theme_mod( 'footer_right', 'Copyright 2016. All rights reserved.' ) ); ?>

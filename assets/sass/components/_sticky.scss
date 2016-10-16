@@ -1,0 +1,16 @@
+/* Sticky */
+.sticky {
+	background-color: $brand-primary;
+
+	.article__meta {
+		color: $gray;
+
+		a {
+			color: $gray;
+		}
+	}
+
+	.article__content {
+		color: $gray-dark;
+	}
+}

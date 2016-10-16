@@ -142,6 +142,22 @@
 			}
 		}
 	}
+
+	.header-widgets & {
+		.search-form {
+			&__submit {
+				background-color: transparent;
+			}
+
+			&__field {
+				background-color: transparent;
+
+				&:focus {
+					background-color: #ffffff;
+				}
+			}
+		}
+	}
 }
 
 /* Widgets With Lists */
@@ -261,6 +277,26 @@
 
 	> p:last-of-type {
 		margin-bottom: 0;
+	}
+
+	.header-widgets & {
+		.fa {
+			font-size: 20px;
+			vertical-align: middle;
+			padding-bottom: 2px;
+			margin-right: 10px;
+		}
+
+		a {
+			color: $gray;
+			transition: $primary-transition;
+
+			&:focus,
+			&:hover {
+				text-decoration: none;
+				color: $gray-dark;
+			}
+		}
 	}
 }
 

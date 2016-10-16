@@ -106,6 +106,7 @@
 		color: $gray;
 		border-top: 1px solid #dddddd;
 		padding: 10.5px 5px;
+		transition: $primary-transition;
 
 		@include media-breakpoint-up(lg) {
 			border-top: 0;

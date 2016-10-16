@@ -3,8 +3,8 @@ Theme Name: Speculor
 Author: Marko Prelec
 Author URI: http://www.prelc.si
 Version: 0.0.0
-Description: Speculor is fast, clean and simple WordPress theme.
-Tags: custom-colors, featured-images, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, blog
+Description: Speculor is fast, clean and powerful WordPress theme.
+Tags: two-columns, right-sidebar, custom-colors, custom-menu, custom-logo, featured-images, sticky-post, theme-options, threaded-comments, translation-ready, blog, entertainment, news, photography
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text domain: speculor
@@ -92,7 +92,8 @@ body {
 	background-color: $gray-lightest;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
 	letter-spacing: -0.5px;
 }
 
@@ -102,10 +103,53 @@ figure {
 	height: auto;
 }
 
+// Block code.
+pre {
+	background-color: #f8f8f8;
+	border-top: 1px solid #eeeeee;
+	border-bottom: 1px solid #eeeeee;
+	padding: 30px;
+	margin-left: -15px;
+	margin-right: -15px;
+
+	@include media-breakpoint-up(sm) {
+		margin-left: -60px;
+		margin-right: -60px;
+	}
+}
+
 blockquote {
-	border-left: ptr(3) solid $brand-primary;
-	padding-left: ptr(20);
+	position: relative;
 	font-style: italic;
+	background-color: #f8f8f8;
+	border-top: 1px solid #eeeeee;
+	border-bottom: 1px solid #eeeeee;
+	padding: 30px 60px 30px 125px;
+	margin-left: -15px;
+	margin-right: -15px;
+
+	@include media-breakpoint-up(sm) {
+		margin-left: -60px;
+		margin-right: -60px;
+	}
+
+	&::before {
+		position: absolute;
+		content: '“';
+		font-family: Georgia, "Times New Roman";
+		font-size: 100px;
+		color: #bbbbbb;
+		top: -5px;
+		left: 52px;
+	}
+
+	.article__content & {
+		p {
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+		}
+	}
 }
 
 /*------------------------------------*\
@@ -114,6 +158,10 @@ blockquote {
 
 .screen-reader-text {
 	@extend .sr-only;
+}
+
+.embed-responsive-13by8 {
+	padding-bottom: percentage(8 / 13);
 }
 
 /*------------------------------------*\
@@ -138,6 +186,7 @@ blockquote {
 @import 'components/wp';
 @import 'components/wp-widgets';
 @import 'components/article';
+@import 'components/sticky';
 @import 'components/tags';
 @import 'components/comments';
 
