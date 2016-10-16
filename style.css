@@ -2729,8 +2729,8 @@ blockquote {
     letter-spacing: -0.5px;
     line-height: 1;
     color: #272727;
-    padding-top: 24px;
-    padding-bottom: 30px;
+    padding-top: 14px;
+    padding-bottom: 20px;
     margin-bottom: 0; }
   .header__heading-link, .header .custom-logo-link {
     display: -webkit-box;
@@ -2740,6 +2740,7 @@ blockquote {
         -ms-flex-align: center;
             align-items: center;
     min-height: 90px;
+    padding: 10px 0;
     margin-left: 15px; }
     @media (min-width: 768px) {
       .header__heading-link, .header .custom-logo-link {
