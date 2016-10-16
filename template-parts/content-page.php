@@ -9,8 +9,8 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'article  clearfix' ); ?>>
-	<div class="article__content">
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'article  h-entry  clearfix' ); ?>>
+	<div class="article__content  e-content">
 		<!-- Content -->
 		<?php the_content(); ?>
 

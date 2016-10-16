@@ -26,13 +26,13 @@ get_template_part( 'template-parts/page-header' );
 					<!-- Post Author -->
 					<?php $author_description = get_the_author_meta( 'description' ); ?>
 
-					<div class="post-author">
+					<div class="post-author  h-card">
 						<?php echo get_avatar( get_the_author_meta( 'ID' ), 80 ); ?>
 						<div class="post-author__content">
-							<p class="h2  post-author__name">
+							<p class="h2  post-author__name  p-name">
 								<?php echo get_the_author_meta( 'display_name' ) ?>
 							</p>
-							<div class="post-author__description">
+							<div class="post-author__description  p-note">
 								<?php echo $author_description ?>
 							</div>
 						</div>
