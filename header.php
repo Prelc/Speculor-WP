@@ -56,7 +56,7 @@
 
 	<?php
 	// Hide header widgets, if both header sidebars are not in use.
-	if ( is_active_sidebar( 'header-widgets-left' ) || is_active_sidebar( 'header-widgets-left' ) ) {
+	if ( is_active_sidebar( 'header-widgets-left' ) || is_active_sidebar( 'header-widgets-right' ) ) {
 	?>
 		<div class="header-widgets">
 			<!-- Header widget left area -->
