@@ -1,7 +1,11 @@
 Speculor WordPress Theme
 ===
 
-Theme is still under construction.
+Theme is still under construction. I would be happy for any kind of feedback on what I could improve our add in the theme.
+
+### Demo
+
+http://www.prelc.si/speculor/
 
 ### Theme Screenshot
 
