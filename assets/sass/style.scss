@@ -160,6 +160,10 @@ blockquote {
 	@extend .sr-only;
 }
 
+.embed-responsive-13by8 {
+	padding-bottom: percentage(8 / 13);
+}
+
 /*------------------------------------*\
 	05. Components
 \*------------------------------------*/
