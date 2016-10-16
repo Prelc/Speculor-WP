@@ -5,4 +5,4 @@ Theme is still under construction.
 
 ### Theme Screenshot
 
-![Speculor WordPress Theme](https://github.com/Prelc/Speculor-WP/blob/master/screenshot.jpg)
+![Speculor WordPress Theme](http://i.imgur.com/Zu1fece.jpg)
