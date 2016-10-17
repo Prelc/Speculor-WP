@@ -54,11 +54,11 @@
 
 	&__title {
 		font-size: ptr(26);
-		margin-bottom: ptr(28);
+		margin-bottom: ptr(22);
 
 		.single & {
 			font-size: ptr(30);
-			margin-bottom: ptr(41);
+			margin-bottom: ptr(28);
 		}
 
 		a {
