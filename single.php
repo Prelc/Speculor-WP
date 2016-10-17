@@ -23,20 +23,22 @@ get_template_part( 'template-parts/page-header' );
 
 					?>
 
-					<!-- Post Author -->
-					<?php $author_description = get_the_author_meta( 'description' ); ?>
+					<?php if ( 'hide' !== get_theme_mod( 'post_author', 'show' ) ) : ?>
+						<!-- Post Author -->
+						<?php $author_description = get_the_author_meta( 'description' ); ?>
 
-					<div class="post-author  h-card">
-						<?php echo get_avatar( get_the_author_meta( 'ID' ), 80 ); ?>
-						<div class="post-author__content">
-							<p class="h2  post-author__name  p-name">
-								<?php echo get_the_author_meta( 'display_name' ) ?>
-							</p>
-							<div class="post-author__description  p-note">
-								<?php echo $author_description ?>
+						<div class="post-author  h-card">
+							<?php echo get_avatar( get_the_author_meta( 'ID' ), 80 ); ?>
+							<div class="post-author__content">
+								<p class="h2  post-author__name  p-name">
+									<?php echo get_the_author_meta( 'display_name' ) ?>
+								</p>
+								<div class="post-author__description  p-note">
+									<?php echo $author_description ?>
+								</div>
 							</div>
 						</div>
-					</div>
+					<?php endif; ?>
 
 					<!-- Comments -->
 					<?php
@@ -57,30 +59,32 @@ get_template_part( 'template-parts/page-header' );
 					</div>
 					<?php endif; ?>
 
-					<!-- Post Navigation -->
-					<?php
-					$prev_post = get_adjacent_post( false, '', false );
-					$next_post = get_adjacent_post( false, '', true );
-					?>
+					<?php if ( 'hide' !== get_theme_mod( 'post_navigation', 'show' ) ) : ?>
+						<!-- Post Navigation -->
+						<?php
+						$prev_post = get_adjacent_post( false, '', false );
+						$next_post = get_adjacent_post( false, '', true );
+						?>
 
-					<div class="post-navigation__container">
-						<a class="post-navigation  post-navigation--previous" href="<?php echo get_permalink( $prev_post ); ?>">
-							<div class="h5  post-navigation__title  post-navigation__title--previous">
-								<?php echo get_the_title( $prev_post ); ?>
-							</div>
-							<div class="h6  post-navigation__text  post-navigation__text--previous">
-								<?php esc_html_e( 'Previous post' , 'speculor' ); ?>
-							</div>
-						</a>
-						<a class="post-navigation  post-navigation--next" href="<?php echo get_permalink( $next_post ); ?>">
-							<div class="h5  post-navigation__title  post-navigation__title--next">
-								<?php echo get_the_title( $next_post ); ?>
-							</div>
-							<div class="h6  post-navigation__text  post-navigation__text--next">
-								<?php esc_html_e( 'Next post' , 'speculor' ); ?>
-							</div>
-						</a>
-					</div>
+						<div class="post-navigation__container">
+							<a class="post-navigation  post-navigation--previous" href="<?php echo get_permalink( $prev_post ); ?>">
+								<div class="h5  post-navigation__title  post-navigation__title--previous">
+									<?php echo get_the_title( $prev_post ); ?>
+								</div>
+								<div class="h6  post-navigation__text  post-navigation__text--previous">
+									<?php esc_html_e( 'Previous post' , 'speculor' ); ?>
+								</div>
+							</a>
+							<a class="post-navigation  post-navigation--next" href="<?php echo get_permalink( $next_post ); ?>">
+								<div class="h5  post-navigation__title  post-navigation__title--next">
+									<?php echo get_the_title( $next_post ); ?>
+								</div>
+								<div class="h6  post-navigation__text  post-navigation__text--next">
+									<?php esc_html_e( 'Next post' , 'speculor' ); ?>
+								</div>
+							</a>
+						</div>
+					<?php endif; ?>
 				<?php endwhile; // End of the loop. ?>
 			</main>
 			<!-- Sidebar -->
