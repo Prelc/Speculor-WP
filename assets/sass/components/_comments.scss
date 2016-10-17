@@ -25,7 +25,7 @@
 					border-bottom: 0;
 
 					+ .children {
-						border-top: 1px dashed $gray-lightest;
+						border-top: 1px dashed #e8e8e8;
 						padding-top: 23px;
 						margin-top: 30px;
 					}
@@ -57,7 +57,7 @@
 
 .comment {
 	&-body {
-		border-bottom: 1px dashed $gray-lightest;
+		border-bottom: 1px dashed #e8e8e8;
 		padding-bottom: 23px;
 		margin-bottom: 30px;
 	}

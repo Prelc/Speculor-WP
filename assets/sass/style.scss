@@ -117,6 +117,14 @@ pre {
 		margin-right: -60px;
 		padding: 30px 60px;
 	}
+
+	.comments & {
+		@include media-breakpoint-up(sm) {
+			margin-left: -30px;
+			margin-right: -30px;
+			padding: 30px;
+		}
+	}
 }
 
 blockquote {
@@ -153,6 +161,20 @@ blockquote {
 		p {
 			&:last-of-type {
 				margin-bottom: 0;
+			}
+		}
+	}
+
+	.comments & {
+		@include media-breakpoint-up(sm) {
+			margin-left: -30px;
+			margin-right: -30px;
+			padding: 30px 15px 20px 80px;
+		}
+
+		&::before {
+			@include media-breakpoint-up(sm) {
+				left: 15px;
 			}
 		}
 	}
