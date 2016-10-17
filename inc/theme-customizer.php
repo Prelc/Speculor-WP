@@ -178,56 +178,49 @@ function speculor_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
 		'navigation_link_color',
 		array(
-			'default' => '#555555',
+			'default' => '#696773',
 			'sanitize_callback' => 'sanitize_hex_color',
 		)
 	);
 	$wp_customize->add_setting(
 		'navigation_link_hover_color',
 		array(
-			'default' => '#1bbebc',
+			'default' => '#272727',
 			'sanitize_callback' => 'sanitize_hex_color',
 		)
 	);
 	$wp_customize->add_setting(
 		'navigation_submenu_link_color',
 		array(
-			'default' => '#555555',
+			'default' => '#272727',
 			'sanitize_callback' => 'sanitize_hex_color',
 		)
 	);
 	$wp_customize->add_setting(
 		'navigation_submenu_link_hover_color',
 		array(
-			'default' => '#1bbebc',
-			'sanitize_callback' => 'sanitize_hex_color',
-		)
-	);
-	$wp_customize->add_setting(
-		'navigation_submenu_background_color',
-		array(
-			'default' => '#f2f2f2',
+			'default' => '#272727',
 			'sanitize_callback' => 'sanitize_hex_color',
 		)
 	);
 	$wp_customize->add_setting(
 		'navigation_mobile_link_color',
 		array(
-			'default' => '#555555',
+			'default' => '#696773',
 			'sanitize_callback' => 'sanitize_hex_color',
 		)
 	);
 	$wp_customize->add_setting(
 		'navigation_mobile_link_hover_color',
 		array(
-			'default' => '#1bbebc',
+			'default' => '#272727',
 			'sanitize_callback' => 'sanitize_hex_color',
 		)
 	);
 	$wp_customize->add_setting(
 		'navigation_mobile_background_color',
 		array(
-			'default' => '#f2f2f2',
+			'default' => '#eff1f3',
 			'sanitize_callback' => 'sanitize_hex_color',
 		)
 	);
@@ -455,17 +448,6 @@ function speculor_customizer( $wp_customize ) {
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'navigation_submenu_background_color',
-			array(
-				'label' => __( 'Submenu Background Color', 'speculor' ),
-				'settings' => 'navigation_submenu_background_color',
-				'section' => 'section_navigation',
-			)
-		)
-	);
-	$wp_customize->add_control(
-		new WP_Customize_Color_Control(
-			$wp_customize,
 			'navigation_mobile_link_color',
 			array(
 				'label' => __( 'Mobile Link Color', 'speculor' ),
@@ -605,6 +587,15 @@ function customizer_colors() {
 	$header_widgets_link_color = get_theme_mod( 'header_widgets_link_color', '#696773' );
 	$header_widgets_background_color = get_theme_mod( 'header_widgets_background_color', '#e6e9ec' );
 
+	// Navigation Colors
+	$navigation_link_color = get_theme_mod( 'navigation_link_color', '#696773' );
+	$navigation_link_hover_color = get_theme_mod( 'navigation_link_hover_color', '#272727' );
+	$navigation_submenu_link_color = get_theme_mod( 'navigation_submenu_link_color', '#272727' );
+	$navigation_submenu_link_hover_color = get_theme_mod( 'navigation_submenu_link_hover_color', '#272727' );
+	$navigation_mobile_link_color = get_theme_mod( 'navigation_mobile_link_color', '#696773' );
+	$navigation_mobile_link_hover_color = get_theme_mod( 'navigation_mobile_link_hover_color', '#272727' );
+	$navigation_mobile_background_color = get_theme_mod( 'navigation_mobile_background_color', '#eff1f3' );
+
 	// Footer Colors
 	$footer_text_color = get_theme_mod( 'footer_text_color', '#696773' );
 	$footer_link_color = get_theme_mod( 'footer_link_color', '#009fb7' );
@@ -616,6 +607,7 @@ function customizer_colors() {
 	$base_logo_color = new speculor_Color( $logo_color );
 	$base_header_widgets_link_color = new speculor_Color( $header_widgets_link_color );
 	$base_footer_link_color = new speculor_Color( $footer_link_color );
+	$base_navigation_mobile_background_color = new speculor_Color( $navigation_mobile_background_color );
 
 	?>
 
@@ -832,6 +824,80 @@ function customizer_colors() {
 	<?php if ( $header_widgets_background_color ) : ?>
 		.header-widgets {
 			background-color: <?php echo esc_attr( $header_widgets_background_color ); ?>;
+		}
+	<?php endif; ?>
+
+	/* Navigation Link Color */
+	<?php if ( $navigation_link_color ) : ?>
+		@media (min-width: 992px) {
+			.main-navigation a {
+				color: <?php echo esc_attr( $navigation_link_color ); ?>;
+			}
+		}
+	<?php endif; ?>
+
+	/* Navigation Link Hover Color */
+	<?php if ( $navigation_link_hover_color ) : ?>
+		@media (min-width: 992px) {
+			.main-navigation .menu-item:focus > a,
+			.main-navigation .menu-item:hover > a,
+			.main-navigation > .current-menu-item > a {
+				color: <?php echo esc_attr( $navigation_link_hover_color ); ?>;
+			}
+		}
+	<?php endif; ?>
+
+	/* Navigation Submenu Link Color */
+	<?php if ( $navigation_submenu_link_color ) : ?>
+		@media (min-width: 992px) {
+			.main-navigation .sub-menu a {
+				color: <?php echo esc_attr( $navigation_submenu_link_color ); ?>;
+			}
+		}
+	<?php endif; ?>
+
+	/* Navigation Submenu Link Hover Color */
+	<?php if ( $navigation_submenu_link_hover_color ) : ?>
+		@media (min-width: 992px) {
+			.main-navigation .sub-menu .menu-item:focus > a,
+			.main-navigation .sub-menu .menu-item:hover > a {
+				color: <?php echo esc_attr( $navigation_submenu_link_hover_color ); ?>;
+			}
+		}
+	<?php endif; ?>
+
+	/* Navigation Mobile Link Color */
+	<?php if ( $navigation_mobile_link_color ) : ?>
+		@media (max-width: 991px) {
+			.main-navigation a {
+				color: <?php echo esc_attr( $navigation_mobile_link_color ); ?>;
+			}
+		}
+	<?php endif; ?>
+
+	/* Navigation Mobile Link Hover Color */
+	<?php if ( $navigation_mobile_link_hover_color ) : ?>
+		@media (max-width: 991px) {
+			.main-navigation .menu-item:focus > a,
+			.main-navigation .menu-item:hover > a,
+			.main-navigation .sub-menu .menu-item:focus > a,
+			.main-navigation .sub-menu .menu-item:hover > a {
+				color: <?php echo esc_attr( $navigation_mobile_link_hover_color ); ?>;
+			}
+		}
+	<?php endif; ?>
+
+	/* Navigation Mobile Background Color */
+	<?php if ( $navigation_mobile_background_color ) : ?>
+		@media (max-width: 991px) {
+			.main-navigation {
+				background-color: <?php echo esc_attr( $navigation_mobile_background_color ); ?>;
+			}
+
+			.main-navigation a,
+			.main-navigation .featured {
+				border-color: <?php echo esc_attr( '#' . $base_navigation_mobile_background_color->darken(6) ); ?>;
+			}
 		}
 	<?php endif; ?>
 
