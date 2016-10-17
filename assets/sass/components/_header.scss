@@ -19,8 +19,8 @@
 		letter-spacing: -0.5px;
 		line-height: 1;
 		color: $gray-dark;
-		padding-top: 24px;
-		padding-bottom: 30px;
+		padding-top: 14px;
+		padding-bottom: 20px;
 		margin-bottom: 0;
 	}
 
@@ -29,6 +29,7 @@
 		display: flex;
 		align-items: center;
 		min-height: 90px;
+		padding: 10px 0;
 		margin-left: 15px;
 
 		@include media-breakpoint-up(md) {

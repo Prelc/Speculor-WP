@@ -43,11 +43,21 @@ function speculor_customizer( $wp_customize ) {
 	);
 
 	$wp_customize->add_section(
+		'section_header_widgets',
+		array(
+			'title' => __( 'Header Widgets', 'speculor' ),
+			'description' => __( 'Change colors for header widgets.', 'speculor' ),
+			'priority' => 40,
+			'panel'  => 'panel_theme-options',
+		)
+	);
+
+	$wp_customize->add_section(
 		'section_page_header',
 		array(
 			'title' => __( 'Page Header', 'speculor' ),
 			'description' => __( 'Change page header options.', 'speculor' ),
-			'priority' => 35,
+			'priority' => 50,
 			'panel'  => 'panel_theme-options',
 		)
 	);
@@ -57,17 +67,17 @@ function speculor_customizer( $wp_customize ) {
 		array(
 			'title' => __( 'Navigation', 'speculor' ),
 			'description' => __( 'Change colors and settings for navigation.', 'speculor' ),
-			'priority' => 40,
+			'priority' => 60,
 			'panel'  => 'panel_theme-options',
 		)
 	);
 
 	$wp_customize->add_section(
-		'section_meta',
+		'section_post',
 		array(
-			'title' => __( 'Meta', 'speculor' ),
-			'description' => __( 'Everything related to meta data.', 'speculor' ),
-			'priority' => 50,
+			'title' => __( 'Post', 'speculor' ),
+			'description' => __( 'Everything related to posts.', 'speculor' ),
+			'priority' => 70,
 			'panel'  => 'panel_theme-options',
 		)
 	);
@@ -77,17 +87,7 @@ function speculor_customizer( $wp_customize ) {
 		array(
 			'title' => __( 'Footer', 'speculor' ),
 			'description' => __( 'Settings for the footer.', 'speculor' ),
-			'priority' => 60,
-			'panel'  => 'panel_theme-options',
-		)
-	);
-
-	$wp_customize->add_section(
-		'section_custom_code',
-		array(
-			'title' => __( 'Custom Code', 'speculor' ),
-			'description' => __( 'Add custom code. This code will not be affected by updates.', 'speculor' ),
-			'priority' => 70,
+			'priority' => 80,
 			'panel'  => 'panel_theme-options',
 		)
 	);
@@ -100,35 +100,35 @@ function speculor_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
 		'primary_color',
 		array(
-			'default' => '#1bbebc',
+			'default' => '#fed766',
 			'sanitize_callback' => 'sanitize_hex_color',
 		)
 	);
 	$wp_customize->add_setting(
 		'headings_color',
 		array(
-			'default' => '#222222',
+			'default' => '#272727',
 			'sanitize_callback' => 'sanitize_hex_color',
 		)
 	);
 	$wp_customize->add_setting(
 		'text_color',
 		array(
-			'default' => '#555555',
+			'default' => '#696773',
 			'sanitize_callback' => 'sanitize_hex_color',
 		)
 	);
 	$wp_customize->add_setting(
 		'link_color',
 		array(
-			'default' => '#e44244',
+			'default' => '#009fb7',
 			'sanitize_callback' => 'sanitize_hex_color',
 		)
 	);
 	$wp_customize->add_setting(
 		'logo_color',
 		array(
-			'default' => '#222222',
+			'default' => '#272727',
 			'sanitize_callback' => 'sanitize_hex_color',
 		)
 	);
@@ -138,6 +138,29 @@ function speculor_customizer( $wp_customize ) {
 		'header_background_color',
 		array(
 			'default' => '#ffffff',
+			'sanitize_callback' => 'sanitize_hex_color',
+		)
+	);
+
+	// Header Widgets Settings
+	$wp_customize->add_setting(
+		'header_widgets_text_color',
+		array(
+			'default' => '#696773',
+			'sanitize_callback' => 'sanitize_hex_color',
+		)
+	);
+	$wp_customize->add_setting(
+		'header_widgets_link_color',
+		array(
+			'default' => '#696773',
+			'sanitize_callback' => 'sanitize_hex_color',
+		)
+	);
+	$wp_customize->add_setting(
+		'header_widgets_background_color',
+		array(
+			'default' => '#e6e9ec',
 			'sanitize_callback' => 'sanitize_hex_color',
 		)
 	);
@@ -153,114 +176,65 @@ function speculor_customizer( $wp_customize ) {
 
 	// Navigation Settings
 	$wp_customize->add_setting(
-		'navigation_search',
-		array(
-			'default' => 'show',
-			'sanitize_callback' => 'speculor_sanitize_select',
-		)
-	);
-	$wp_customize->add_setting(
 		'navigation_link_color',
 		array(
-			'default' => '#555555',
+			'default' => '#696773',
 			'sanitize_callback' => 'sanitize_hex_color',
 		)
 	);
 	$wp_customize->add_setting(
 		'navigation_link_hover_color',
 		array(
-			'default' => '#1bbebc',
+			'default' => '#272727',
 			'sanitize_callback' => 'sanitize_hex_color',
 		)
 	);
 	$wp_customize->add_setting(
 		'navigation_submenu_link_color',
 		array(
-			'default' => '#555555',
+			'default' => '#272727',
 			'sanitize_callback' => 'sanitize_hex_color',
 		)
 	);
 	$wp_customize->add_setting(
 		'navigation_submenu_link_hover_color',
 		array(
-			'default' => '#1bbebc',
-			'sanitize_callback' => 'sanitize_hex_color',
-		)
-	);
-	$wp_customize->add_setting(
-		'navigation_submenu_background_color',
-		array(
-			'default' => '#f2f2f2',
+			'default' => '#272727',
 			'sanitize_callback' => 'sanitize_hex_color',
 		)
 	);
 	$wp_customize->add_setting(
 		'navigation_mobile_link_color',
 		array(
-			'default' => '#555555',
+			'default' => '#696773',
 			'sanitize_callback' => 'sanitize_hex_color',
 		)
 	);
 	$wp_customize->add_setting(
 		'navigation_mobile_link_hover_color',
 		array(
-			'default' => '#1bbebc',
+			'default' => '#272727',
 			'sanitize_callback' => 'sanitize_hex_color',
 		)
 	);
 	$wp_customize->add_setting(
 		'navigation_mobile_background_color',
 		array(
-			'default' => '#f2f2f2',
+			'default' => '#eff1f3',
 			'sanitize_callback' => 'sanitize_hex_color',
 		)
 	);
 
-	// Meta settings
+	// Post settings
 	$wp_customize->add_setting(
-		'meta_author_avatar',
+		'post_author',
 		array(
 			'default' => 'show',
 			'sanitize_callback' => 'speculor_sanitize_select',
 		)
 	);
 	$wp_customize->add_setting(
-		'meta_author',
-		array(
-			'default' => 'show',
-			'sanitize_callback' => 'speculor_sanitize_select',
-		)
-	);
-	$wp_customize->add_setting(
-		'meta_date',
-		array(
-			'default' => 'show',
-			'sanitize_callback' => 'speculor_sanitize_select',
-		)
-	);
-	$wp_customize->add_setting(
-		'meta_comment_number',
-		array(
-			'default' => 'show',
-			'sanitize_callback' => 'speculor_sanitize_select',
-		)
-	);
-	$wp_customize->add_setting(
-		'meta_categories',
-		array(
-			'default' => 'show',
-			'sanitize_callback' => 'speculor_sanitize_select',
-		)
-	);
-	$wp_customize->add_setting(
-		'meta_tags',
-		array(
-			'default' => 'show',
-			'sanitize_callback' => 'speculor_sanitize_select',
-		)
-	);
-	$wp_customize->add_setting(
-		'meta_author_description',
+		'post_navigation',
 		array(
 			'default' => 'show',
 			'sanitize_callback' => 'speculor_sanitize_select',
@@ -285,14 +259,14 @@ function speculor_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
 		'footer_text_color',
 		array(
-			'default' => '#555555',
+			'default' => '#696773',
 			'sanitize_callback' => 'sanitize_hex_color',
 		)
 	);
 	$wp_customize->add_setting(
 		'footer_link_color',
 		array(
-			'default' => '#e44244',
+			'default' => '#009fb7',
 			'sanitize_callback' => 'sanitize_hex_color',
 		)
 	);
@@ -301,15 +275,6 @@ function speculor_customizer( $wp_customize ) {
 		array(
 			'default' => '#ffffff',
 			'sanitize_callback' => 'sanitize_hex_color',
-		)
-	);
-
-	// Custom Code Settings
-	$wp_customize->add_setting(
-		'custom_css',
-		array(
-			'sanitize_callback'    => 'wp_filter_nohtml_kses',
-			'sanitize_js_callback' => 'wp_filter_nohtml_kses'
 		)
 	);
 
@@ -388,6 +353,41 @@ function speculor_customizer( $wp_customize ) {
 		)
 	);
 
+	// Header Widgets Controls
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'header_widgets_text_color',
+			array(
+				'label' => __( 'Text Color', 'speculor' ),
+				'settings' => 'header_widgets_text_color',
+				'section' => 'section_header_widgets',
+			)
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'header_widgets_link_color',
+			array(
+				'label' => __( 'Link Color', 'speculor' ),
+				'settings' => 'header_widgets_link_color',
+				'section' => 'section_header_widgets',
+			)
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'header_widgets_background_color',
+			array(
+				'label' => __( 'Background Color', 'speculor' ),
+				'settings' => 'header_widgets_background_color',
+				'section' => 'section_header_widgets',
+			)
+		)
+	);
+
 	// Page Header Controls
 	$wp_customize->add_control(
 		'page_header_blog_title',
@@ -401,18 +401,6 @@ function speculor_customizer( $wp_customize ) {
 	);
 
 	// Navigation Controls
-	$wp_customize->add_control(
-		'navigation_search',
-		array(
-			'type' => 'select',
-			'label' => __( 'Search Field', 'speculor' ),
-			'section' => 'section_navigation',
-			'choices' => array(
-				'show' => __( 'Show', 'speculor' ),
-				'hide' => __( 'Hide', 'speculor' ),
-			),
-		)
-	);
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control(
 			$wp_customize,
@@ -460,17 +448,6 @@ function speculor_customizer( $wp_customize ) {
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'navigation_submenu_background_color',
-			array(
-				'label' => __( 'Submenu Background Color', 'speculor' ),
-				'settings' => 'navigation_submenu_background_color',
-				'section' => 'section_navigation',
-			)
-		)
-	);
-	$wp_customize->add_control(
-		new WP_Customize_Color_Control(
-			$wp_customize,
 			'navigation_mobile_link_color',
 			array(
 				'label' => __( 'Mobile Link Color', 'speculor' ),
@@ -502,13 +479,14 @@ function speculor_customizer( $wp_customize ) {
 		)
 	);
 
-	// Meta Controls
+	// post Controls
 	$wp_customize->add_control(
-		'meta_author_avatar',
+		'post_author',
 		array(
 			'type' => 'select',
-			'label' => __( 'Meta Author Avatar', 'speculor' ),
-			'section' => 'section_meta',
+			'label' => __( 'Post Author', 'speculor' ),
+			'description' => __( 'Author description can be found at the bottom of the single post.', 'speculor' ),
+			'section' => 'section_post',
 			'choices' => array(
 				'show' => __( 'Show', 'speculor' ),
 				'hide' => __( 'Hide', 'speculor' ),
@@ -516,73 +494,12 @@ function speculor_customizer( $wp_customize ) {
 		)
 	);
 	$wp_customize->add_control(
-		'meta_author',
+		'post_navigation',
 		array(
 			'type' => 'select',
-			'label' => __( 'Meta Author', 'speculor' ),
-			'section' => 'section_meta',
-			'choices' => array(
-				'show' => __( 'Show', 'speculor' ),
-				'hide' => __( 'Hide', 'speculor' ),
-			),
-		)
-	);
-	$wp_customize->add_control(
-		'meta_date',
-		array(
-			'type' => 'select',
-			'label' => __( 'Meta Date', 'speculor' ),
-			'section' => 'section_meta',
-			'choices' => array(
-				'show' => __( 'Show', 'speculor' ),
-				'hide' => __( 'Hide', 'speculor' ),
-			),
-		)
-	);
-	$wp_customize->add_control(
-		'meta_comment_number',
-		array(
-			'type' => 'select',
-			'label' => __( 'Meta Comment Number', 'speculor' ),
-			'section' => 'section_meta',
-			'choices' => array(
-				'show' => __( 'Show', 'speculor' ),
-				'hide' => __( 'Hide', 'speculor' ),
-			),
-		)
-	);
-	$wp_customize->add_control(
-		'meta_categories',
-		array(
-			'type' => 'select',
-			'label' => __( 'Meta Categories', 'speculor' ),
-			'section' => 'section_meta',
-			'choices' => array(
-				'show' => __( 'Show', 'speculor' ),
-				'hide' => __( 'Hide', 'speculor' ),
-			),
-		)
-	);
-	$wp_customize->add_control(
-		'meta_tags',
-		array(
-			'type' => 'select',
-			'label' => __( 'Meta Tags', 'speculor' ),
-			'description' => __( 'Tags are at the bottom of the single page.', 'speculor' ),
-			'section' => 'section_meta',
-			'choices' => array(
-				'show' => __( 'Show', 'speculor' ),
-				'hide' => __( 'Hide', 'speculor' ),
-			),
-		)
-	);
-	$wp_customize->add_control(
-		'meta_author_description',
-		array(
-			'type' => 'select',
-			'label' => __( 'Meta Author Description', 'speculor' ),
-			'description' => __( 'Description is at the bottom of the single page.', 'speculor' ),
-			'section' => 'section_meta',
+			'label' => __( 'Post Navigation', 'speculor' ),
+			'description' => __( 'Next and previous link which can be found at the bottom of the single post.', 'speculor' ),
+			'section' => 'section_post',
 			'choices' => array(
 				'show' => __( 'Show', 'speculor' ),
 				'hide' => __( 'Hide', 'speculor' ),
@@ -645,14 +562,6 @@ function speculor_customizer( $wp_customize ) {
 			)
 		)
 	);
-
-	// Custom Code Controls
-	$wp_customize->add_control( 'custom_css', array(
-		'type'        => 'textarea',
-		'label'       => __( 'Custom CSS', 'speculor' ),
-		'section'     => 'section_custom_code',
-	) );
-
 }
 add_action( 'customize_register', 'speculor_customizer' );
 
@@ -663,9 +572,359 @@ add_action( 'customize_register', 'speculor_customizer' );
 
 function customizer_colors() {
 
+	// Theme Colors
+	$primary_color = get_theme_mod( 'primary_color', '#fed766' );
+	$headings_color = get_theme_mod( 'headings_color', '#272727' );
+	$text_color = get_theme_mod( 'text_color', '#696773' );
+	$link_color = get_theme_mod( 'link_color', '#009fb7' );
+	$logo_color = get_theme_mod( 'logo_color', '#272727' );
+
+	// Header Colors
+	$header_background_color = get_theme_mod( 'header_background_color', '#ffffff' );
+
+	// Header Widgets Colors
+	$header_widgets_text_color = get_theme_mod( 'header_widgets_text_color', '#696773' );
+	$header_widgets_link_color = get_theme_mod( 'header_widgets_link_color', '#696773' );
+	$header_widgets_background_color = get_theme_mod( 'header_widgets_background_color', '#e6e9ec' );
+
+	// Navigation Colors
+	$navigation_link_color = get_theme_mod( 'navigation_link_color', '#696773' );
+	$navigation_link_hover_color = get_theme_mod( 'navigation_link_hover_color', '#272727' );
+	$navigation_submenu_link_color = get_theme_mod( 'navigation_submenu_link_color', '#272727' );
+	$navigation_submenu_link_hover_color = get_theme_mod( 'navigation_submenu_link_hover_color', '#272727' );
+	$navigation_mobile_link_color = get_theme_mod( 'navigation_mobile_link_color', '#696773' );
+	$navigation_mobile_link_hover_color = get_theme_mod( 'navigation_mobile_link_hover_color', '#272727' );
+	$navigation_mobile_background_color = get_theme_mod( 'navigation_mobile_background_color', '#eff1f3' );
+
+	// Footer Colors
+	$footer_text_color = get_theme_mod( 'footer_text_color', '#696773' );
+	$footer_link_color = get_theme_mod( 'footer_link_color', '#009fb7' );
+	$footer_background_color = get_theme_mod( 'footer_background_color', '#ffffff' );
+
+	// Colors
+	$base_primary_color = new speculor_Color( $primary_color );
+	$base_link_color = new speculor_Color( $link_color );
+	$base_logo_color = new speculor_Color( $logo_color );
+	$base_header_widgets_link_color = new speculor_Color( $header_widgets_link_color );
+	$base_footer_link_color = new speculor_Color( $footer_link_color );
+	$base_navigation_mobile_background_color = new speculor_Color( $navigation_mobile_background_color );
+
 	?>
 
 	<style>
+
+	/* Primary Color */
+	<?php if ( $primary_color ) : ?>
+		.widget_archive a:hover,
+		.widget_pages a:hover,
+		.widget_categories a:hover,
+		.widget_meta a:hover,
+		.widget_recent_comments a:hover,
+		.widget_recent_entries a:hover,
+		.widget_rss a:hover,
+		.widget_nav_menu .menu-item a:focus,
+		.widget_nav_menu .menu-item a:hover {
+			color: <?php echo esc_attr( $primary_color ); ?>;
+		}
+
+		.btn-primary,
+		.pagination .current,
+		.pagination .current:focus,
+		.pagination .current:hover,
+		.comment-respond .submit,
+		.widget_calendar caption,
+		.main-navigation .menu-item:focus > a::after,
+		.main-navigation .menu-item:hover > a::after {
+			background-color: <?php echo esc_attr( $primary_color ); ?>;
+		}
+
+		@media (min-width: 992px) {
+			.main-navigation > .menu-item > a::before,
+			.main-navigation .sub-menu a {
+				background-color: <?php echo esc_attr( $primary_color ); ?>;
+			}
+		}
+
+		.btn-primary:hover,
+		.comment-respond .submit:focus,
+		.comment-respond .submit:hover {
+			background-color: <?php echo esc_attr( '#' . $base_primary_color->darken(12) ); ?>;
+		}
+
+		@media (min-width: 992px) {
+			.main-navigation .sub-menu .menu-item:focus > a,
+			.main-navigation .sub-menu .menu-item:hover > a {
+				background-color: <?php echo esc_attr( '#' . $base_primary_color->darken(12) ); ?>;
+			}
+		}
+
+		.btn-primary,
+		.comment-respond .submit,
+		.widget_search .search-form__field:focus,
+		.main-navigation .featured a {
+			border-color: <?php echo esc_attr( $primary_color ); ?>;
+		}
+
+		@media (min-width: 992px)  {
+			.main-navigation > .menu-item-has-children > a::after {
+				border-bottom-color: <?php echo esc_attr( $primary_color ); ?>;
+				border-right-color: <?php echo esc_attr( $primary_color ); ?>;
+			}
+		}
+
+		.comment-respond .submit:focus,
+		.comment-respond .submit:hover,
+		.btn-primary:hover,
+		.main-navigation .featured a:focus,
+		.main-navigation .featured a:hover {
+			border-color: <?php echo esc_attr( '#' . $base_primary_color->darken(12) ); ?>;
+		}
+
+		@media (min-width: 992px) {
+			.main-navigation .sub-menu .menu-item-has-children::after {
+				border-top-color: <?php echo esc_attr( '#' . $base_primary_color->darken(12) ); ?>;
+			}
+		}
+
+		@media (min-width: 992px) {
+			.main-navigation .sub-menu a {
+				border-bottom-color: <?php echo esc_attr( '#' . $base_primary_color->darken(12) ); ?>;
+			}
+		}
+
+		@media (min-width: 992px) {
+			.main-navigation .sub-menu .sub-menu a {
+				border-left-color: <?php echo esc_attr( '#' . $base_primary_color->darken(12) ); ?>;
+			}
+		}
+
+		@media (min-width: 992px) {
+			.main-navigation .sub-menu .menu-item-has-children::after {
+				border-right-color: <?php echo esc_attr( '#' . $base_primary_color->darken(12) ); ?>;
+			}
+		}
+
+		.btn-primary:active:hover {
+			background-color: <?php echo esc_attr( '#' . $base_primary_color->darken(18) ); ?>;
+		}
+
+		.btn-primary:active:hover {
+			border-color: <?php echo esc_attr( '#' . $base_primary_color->darken(18) ); ?>;
+		}
+	<?php endif; ?>
+
+	/* Headings Color */
+	<?php if ( $headings_color ) : ?>
+		h1, h2, h3, h4, h5, h6,
+		.article__title a,
+		.article__title a:hover,
+		.page-header__title,
+		.post-author__name,
+		.post-navigation__title,
+		.sidebar__heading {
+			color: <?php echo esc_attr( $headings_color ); ?>;
+		}
+	<?php endif; ?>
+
+	/* Text Color */
+	<?php if ( $text_color ) : ?>
+		body {
+			color: <?php echo esc_attr( $text_color ); ?>;
+		}
+	<?php endif; ?>
+
+	/* Link Color */
+	<?php if ( $link_color ) : ?>
+		a,
+		a:focus {
+			color: <?php echo esc_attr( $link_color ); ?>;
+		}
+
+		a:hover {
+			color: <?php echo esc_attr( '#' . $base_link_color->darken(6) ); ?>;
+		}
+
+		.btn-secondary,
+		.btn-secondary:focus {
+			background-color: <?php echo esc_attr( $link_color ); ?>;
+		}
+
+		.btn-secondary:hover,
+		.btn-secondary:focus:hover {
+			background-color: <?php echo esc_attr( '#' . $base_link_color->darken(6) ); ?>;
+		}
+
+		.btn-secondary,
+		.btn-secondary:focus {
+			border-color: <?php echo esc_attr( $link_color ); ?>;
+		}
+
+		.btn-secondary:hover,
+		.btn-secondary:focus:hover {
+			border-color: <?php echo esc_attr( '#' . $base_link_color->darken(6) ); ?>;
+		}
+
+		.btn-secondary:active:hover {
+			background-color: <?php echo esc_attr( '#' . $base_link_color->darken(12) ); ?>;
+		}
+
+		.btn-secondary:active:hover {
+			border-color: <?php echo esc_attr( '#' . $base_link_color->darken(12) ); ?>;
+		}
+	<?php endif; ?>
+
+	/* Logo Color */
+	<?php if ( $logo_color ) : ?>
+		.header__heading-link,
+		.header__heading {
+			color: <?php echo esc_attr( $logo_color ); ?>;
+		}
+
+		.header__heading-link:focus .header__heading,
+		.header__heading-link:hover .header__heading {
+			color: <?php echo esc_attr( '#' . $base_logo_color->darken(6) ); ?>;
+		}
+	<?php endif; ?>
+
+	/* Header Background Color */
+	<?php if ( $header_background_color ) : ?>
+		.header {
+			background-color: <?php echo esc_attr( $header_background_color ); ?>;
+		}
+
+		@media (min-width: 992px) {
+			.main-navigation {
+				background-color: <?php echo esc_attr( $header_background_color ); ?>;
+			}
+		}
+	<?php endif; ?>
+
+	/* Header Widgets Text Color */
+	<?php if ( $header_widgets_text_color ) : ?>
+		.header-widgets {
+			color: <?php echo esc_attr( $header_widgets_text_color ); ?>;
+		}
+	<?php endif; ?>
+
+	/* Header Widgets Link Color */
+	<?php if ( $header_widgets_link_color ) : ?>
+		.header-widgets a,
+		.header-widgets .textwidget a {
+			color: <?php echo esc_attr( $header_widgets_link_color ); ?>;
+		}
+
+		.header-widgets a:hover,
+		.header-widgets .textwidget a:focus,
+		.header-widgets .textwidget a:hover {
+			color: <?php echo esc_attr( '#' . $base_header_widgets_link_color->darken(12) ); ?>;
+		}
+	<?php endif; ?>
+
+	/* Header Widgets Background Color */
+	<?php if ( $header_widgets_background_color ) : ?>
+		.header-widgets {
+			background-color: <?php echo esc_attr( $header_widgets_background_color ); ?>;
+		}
+	<?php endif; ?>
+
+	/* Navigation Link Color */
+	<?php if ( $navigation_link_color ) : ?>
+		@media (min-width: 992px) {
+			.main-navigation a {
+				color: <?php echo esc_attr( $navigation_link_color ); ?>;
+			}
+		}
+	<?php endif; ?>
+
+	/* Navigation Link Hover Color */
+	<?php if ( $navigation_link_hover_color ) : ?>
+		@media (min-width: 992px) {
+			.main-navigation .menu-item:focus > a,
+			.main-navigation .menu-item:hover > a,
+			.main-navigation > .current-menu-item > a {
+				color: <?php echo esc_attr( $navigation_link_hover_color ); ?>;
+			}
+		}
+	<?php endif; ?>
+
+	/* Navigation Submenu Link Color */
+	<?php if ( $navigation_submenu_link_color ) : ?>
+		@media (min-width: 992px) {
+			.main-navigation .sub-menu a {
+				color: <?php echo esc_attr( $navigation_submenu_link_color ); ?>;
+			}
+		}
+	<?php endif; ?>
+
+	/* Navigation Submenu Link Hover Color */
+	<?php if ( $navigation_submenu_link_hover_color ) : ?>
+		@media (min-width: 992px) {
+			.main-navigation .sub-menu .menu-item:focus > a,
+			.main-navigation .sub-menu .menu-item:hover > a {
+				color: <?php echo esc_attr( $navigation_submenu_link_hover_color ); ?>;
+			}
+		}
+	<?php endif; ?>
+
+	/* Navigation Mobile Link Color */
+	<?php if ( $navigation_mobile_link_color ) : ?>
+		@media (max-width: 991px) {
+			.main-navigation a {
+				color: <?php echo esc_attr( $navigation_mobile_link_color ); ?>;
+			}
+		}
+	<?php endif; ?>
+
+	/* Navigation Mobile Link Hover Color */
+	<?php if ( $navigation_mobile_link_hover_color ) : ?>
+		@media (max-width: 991px) {
+			.main-navigation .menu-item:focus > a,
+			.main-navigation .menu-item:hover > a,
+			.main-navigation .sub-menu .menu-item:focus > a,
+			.main-navigation .sub-menu .menu-item:hover > a {
+				color: <?php echo esc_attr( $navigation_mobile_link_hover_color ); ?>;
+			}
+		}
+	<?php endif; ?>
+
+	/* Navigation Mobile Background Color */
+	<?php if ( $navigation_mobile_background_color ) : ?>
+		@media (max-width: 991px) {
+			.main-navigation {
+				background-color: <?php echo esc_attr( $navigation_mobile_background_color ); ?>;
+			}
+
+			.main-navigation a,
+			.main-navigation .featured {
+				border-color: <?php echo esc_attr( '#' . $base_navigation_mobile_background_color->darken(6) ); ?>;
+			}
+		}
+	<?php endif; ?>
+
+	/* Footer Text Color */
+	<?php if ( $footer_text_color ) : ?>
+		.footer {
+			color: <?php echo esc_attr( $footer_text_color ); ?>;
+		}
+	<?php endif; ?>
+
+	/* Footer Link Color */
+	<?php if ( $footer_link_color ) : ?>
+		.footer a {
+			color: <?php echo esc_attr( $footer_link_color ); ?>;
+		}
+
+		.footer a:hover {
+			color: <?php echo esc_attr( '#' . $base_footer_link_color->darken(6) ); ?>;
+		}
+	<?php endif; ?>
+
+	/* Footer Background Color */
+	<?php if ( $footer_background_color ) : ?>
+		.footer {
+			background-color: <?php echo esc_attr( $footer_background_color ); ?>;
+		}
+	<?php endif; ?>
 
 	</style>
 

@@ -2666,6 +2666,11 @@ pre {
       margin-left: -60px;
       margin-right: -60px;
       padding: 30px 60px; } }
+  @media (min-width: 544px) {
+    .comments pre {
+      margin-left: -30px;
+      margin-right: -30px;
+      padding: 30px; } }
 
 blockquote {
   position: relative;
@@ -2694,6 +2699,14 @@ blockquote {
         left: 52px; } }
   .article__content blockquote p:last-of-type {
     margin-bottom: 0; }
+  @media (min-width: 544px) {
+    .comments blockquote {
+      margin-left: -30px;
+      margin-right: -30px;
+      padding: 30px 15px 20px 80px; } }
+  @media (min-width: 544px) {
+    .comments blockquote::before {
+      left: 15px; } }
 
 /*------------------------------------*	04. Helpers and very general classes
 \*------------------------------------*/
@@ -2729,8 +2742,8 @@ blockquote {
     letter-spacing: -0.5px;
     line-height: 1;
     color: #272727;
-    padding-top: 24px;
-    padding-bottom: 30px;
+    padding-top: 14px;
+    padding-bottom: 20px;
     margin-bottom: 0; }
   .header__heading-link, .header .custom-logo-link {
     display: -webkit-box;
@@ -2740,6 +2753,7 @@ blockquote {
         -ms-flex-align: center;
             align-items: center;
     min-height: 90px;
+    padding: 10px 0;
     margin-left: 15px; }
     @media (min-width: 768px) {
       .header__heading-link, .header .custom-logo-link {
@@ -3187,6 +3201,7 @@ blockquote {
     text-align: center;
     background-color: #ffffff;
     color: #696773;
+    border-radius: 2px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     width: 45px;
     padding-top: 11px;
@@ -3201,10 +3216,12 @@ blockquote {
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); }
   .pagination .current {
     background-color: #fed766;
-    color: #272727; }
+    color: #272727;
+    box-shadow: none; }
     .pagination .current:focus, .pagination .current:hover {
       background-color: #fed766;
-      color: #272727; }
+      color: #272727;
+      box-shadow: none; }
   .pagination .prev, .pagination .next {
     width: auto;
     padding: 11px 20px;
@@ -3650,7 +3667,7 @@ th, td {
   padding-bottom: 0; }
 
 .widget_archive li, .widget_pages li, .widget_categories li, .widget_meta li, .widget_recent_comments li, .widget_recent_entries li, .widget_rss li {
-  border-top: 1px dashed #eff1f3; }
+  border-top: 1px dashed #e8e8e8; }
 
 .widget_archive a, .widget_pages a, .widget_categories a, .widget_meta a, .widget_recent_comments a, .widget_recent_entries a, .widget_rss a {
   display: inline-block;
@@ -3732,7 +3749,7 @@ th, td {
   padding-bottom: 0; }
 
 .widget_nav_menu .menu-item {
-  border-top: 1px dashed #eff1f3; }
+  border-top: 1px dashed #e8e8e8; }
   .widget_nav_menu .menu-item a {
     display: block;
     font-family: "Montserrat", Helvetica, Arial, sans-serif;
@@ -3798,10 +3815,10 @@ th, td {
       margin: 0 0.55556rem; }
   .article__title {
     font-size: 1.44444rem;
-    margin-bottom: 1.55556rem; }
+    margin-bottom: 1.22222rem; }
     .single .article__title {
       font-size: 1.66667rem;
-      margin-bottom: 2.27778rem; }
+      margin-bottom: 1.55556rem; }
     .article__title a {
       color: #272727; }
   .article__content {
@@ -3907,7 +3924,7 @@ th, td {
       padding-bottom: 0;
       border-bottom: 0; }
       .comments__list > .comment:last-of-type > .comment-body + .children {
-        border-top: 1px dashed #eff1f3;
+        border-top: 1px dashed #e8e8e8;
         padding-top: 23px;
         margin-top: 30px; }
   .comments__button {
@@ -3924,7 +3941,7 @@ th, td {
     list-style: none; }
 
 .comment-body {
-  border-bottom: 1px dashed #eff1f3;
+  border-bottom: 1px dashed #e8e8e8;
   padding-bottom: 23px;
   margin-bottom: 30px; }
 

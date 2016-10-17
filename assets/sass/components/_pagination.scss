@@ -10,6 +10,7 @@
 		text-align: center;
 		background-color: #ffffff;
 		color: $gray;
+		border-radius: $border-radius;
 		box-shadow: $primary-box-shadow;
 		width: 45px;
 		padding-top: 11px;
@@ -29,11 +30,13 @@
 	.current {
 		background-color: $brand-primary;
 		color: $gray-dark;
+		box-shadow: none;
 
 		&:focus,
 		&:hover {
 			background-color: $brand-primary;
 			color: $gray-dark;
+			box-shadow: none;
 		}
 	}
 
