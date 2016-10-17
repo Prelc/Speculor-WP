@@ -43,11 +43,21 @@ function speculor_customizer( $wp_customize ) {
 	);
 
 	$wp_customize->add_section(
+		'section_header_widgets',
+		array(
+			'title' => __( 'Header Widgets', 'speculor' ),
+			'description' => __( 'Change colors for header widgets.', 'speculor' ),
+			'priority' => 40,
+			'panel'  => 'panel_theme-options',
+		)
+	);
+
+	$wp_customize->add_section(
 		'section_page_header',
 		array(
 			'title' => __( 'Page Header', 'speculor' ),
 			'description' => __( 'Change page header options.', 'speculor' ),
-			'priority' => 35,
+			'priority' => 50,
 			'panel'  => 'panel_theme-options',
 		)
 	);
@@ -57,7 +67,7 @@ function speculor_customizer( $wp_customize ) {
 		array(
 			'title' => __( 'Navigation', 'speculor' ),
 			'description' => __( 'Change colors and settings for navigation.', 'speculor' ),
-			'priority' => 40,
+			'priority' => 60,
 			'panel'  => 'panel_theme-options',
 		)
 	);
@@ -67,7 +77,7 @@ function speculor_customizer( $wp_customize ) {
 		array(
 			'title' => __( 'Post', 'speculor' ),
 			'description' => __( 'Everything related to posts.', 'speculor' ),
-			'priority' => 50,
+			'priority' => 70,
 			'panel'  => 'panel_theme-options',
 		)
 	);
@@ -77,7 +87,7 @@ function speculor_customizer( $wp_customize ) {
 		array(
 			'title' => __( 'Footer', 'speculor' ),
 			'description' => __( 'Settings for the footer.', 'speculor' ),
-			'priority' => 60,
+			'priority' => 80,
 			'panel'  => 'panel_theme-options',
 		)
 	);
@@ -128,6 +138,29 @@ function speculor_customizer( $wp_customize ) {
 		'header_background_color',
 		array(
 			'default' => '#ffffff',
+			'sanitize_callback' => 'sanitize_hex_color',
+		)
+	);
+
+	// Header Widgets Settings
+	$wp_customize->add_setting(
+		'header_widgets_text_color',
+		array(
+			'default' => '#696773',
+			'sanitize_callback' => 'sanitize_hex_color',
+		)
+	);
+	$wp_customize->add_setting(
+		'header_widgets_link_color',
+		array(
+			'default' => '#696773',
+			'sanitize_callback' => 'sanitize_hex_color',
+		)
+	);
+	$wp_customize->add_setting(
+		'header_widgets_background_color',
+		array(
+			'default' => '#e6e9ec',
 			'sanitize_callback' => 'sanitize_hex_color',
 		)
 	);
@@ -323,6 +356,41 @@ function speculor_customizer( $wp_customize ) {
 				'label' => __( 'Background Color', 'speculor' ),
 				'settings' => 'header_background_color',
 				'section' => 'section_header',
+			)
+		)
+	);
+
+	// Header Widgets Controls
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'header_widgets_text_color',
+			array(
+				'label' => __( 'Text Color', 'speculor' ),
+				'settings' => 'header_widgets_text_color',
+				'section' => 'section_header_widgets',
+			)
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'header_widgets_link_color',
+			array(
+				'label' => __( 'Link Color', 'speculor' ),
+				'settings' => 'header_widgets_link_color',
+				'section' => 'section_header_widgets',
+			)
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'header_widgets_background_color',
+			array(
+				'label' => __( 'Background Color', 'speculor' ),
+				'settings' => 'header_widgets_background_color',
+				'section' => 'section_header_widgets',
 			)
 		)
 	);
@@ -532,6 +600,11 @@ function customizer_colors() {
 	// Header Colors
 	$header_background_color = get_theme_mod( 'header_background_color', '#ffffff' );
 
+	// Header Widgets Colors
+	$header_widgets_text_color = get_theme_mod( 'header_widgets_text_color', '#696773' );
+	$header_widgets_link_color = get_theme_mod( 'header_widgets_link_color', '#696773' );
+	$header_widgets_background_color = get_theme_mod( 'header_widgets_background_color', '#e6e9ec' );
+
 	// Footer Colors
 	$footer_text_color = get_theme_mod( 'footer_text_color', '#696773' );
 	$footer_link_color = get_theme_mod( 'footer_link_color', '#009fb7' );
@@ -541,6 +614,7 @@ function customizer_colors() {
 	$base_primary_color = new speculor_Color( $primary_color );
 	$base_link_color = new speculor_Color( $link_color );
 	$base_logo_color = new speculor_Color( $logo_color );
+	$base_header_widgets_link_color = new speculor_Color( $header_widgets_link_color );
 	$base_footer_link_color = new speculor_Color( $footer_link_color );
 
 	?>
@@ -730,6 +804,34 @@ function customizer_colors() {
 			.main-navigation {
 				background-color: <?php echo esc_attr( $header_background_color ); ?>;
 			}
+		}
+	<?php endif; ?>
+
+	/* Header Widgets Text Color */
+	<?php if ( $header_widgets_text_color ) : ?>
+		.header-widgets {
+			color: <?php echo esc_attr( $header_widgets_text_color ); ?>;
+		}
+	<?php endif; ?>
+
+	/* Header Widgets Link Color */
+	<?php if ( $header_widgets_link_color ) : ?>
+		.header-widgets a,
+		.header-widgets .textwidget a {
+			color: <?php echo esc_attr( $header_widgets_link_color ); ?>;
+		}
+
+		.header-widgets a:hover,
+		.header-widgets .textwidget a:focus,
+		.header-widgets .textwidget a:hover {
+			color: <?php echo esc_attr( '#' . $base_header_widgets_link_color->darken(12) ); ?>;
+		}
+	<?php endif; ?>
+
+	/* Header Widgets Background Color */
+	<?php if ( $header_widgets_background_color ) : ?>
+		.header-widgets {
+			background-color: <?php echo esc_attr( $header_widgets_background_color ); ?>;
 		}
 	<?php endif; ?>
 
