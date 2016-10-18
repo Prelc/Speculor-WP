@@ -39,8 +39,8 @@ function speculor_setup() {
 	 * Add support for Theme Logo -> https://codex.wordpress.org/Theme_Logo
 	 */
 	add_theme_support( 'custom-logo', array(
-		'height'      => 70,
-		'width'       => 172,
+		'height'      => 35,
+		'width'       => 165,
 		'flex-width' => true,
 	) );
 	add_theme_support( 'custom-logo' );
@@ -211,7 +211,7 @@ function speculor_sidebars() {
 		array(
 			'name'          => esc_html__( 'Blog Sidebar', 'speculor' ),
 			'id'            => 'blog-sidebar',
-			'description'   => esc_html__( 'Sidebar on the blog layout.', 'speculor' ),
+			'description'   => esc_html__( 'Sidebar on the blog.', 'speculor' ),
 			'class'         => 'sidebar',
 			'before_widget' => '<div class="widget  %2$s">',
 			'after_widget'  => '</div>',
@@ -239,7 +239,7 @@ function speculor_sidebars() {
 		array(
 			'name'          => esc_html__( 'Header Left', 'speculor' ),
 			'id'            => 'header-widgets-left',
-			'description'   => esc_html__( 'Place for widgets on left side of header', 'speculor' ),
+			'description'   => esc_html__( 'Place for widgets on left side of header.', 'speculor' ),
 			'before_widget' => '<div class="widget  %2$s">',
 			'after_widget'  => '</div>',
 		)
@@ -250,7 +250,7 @@ function speculor_sidebars() {
 		array(
 			'name'          => esc_html__( 'Header Right', 'speculor' ),
 			'id'            => 'header-widgets-right',
-			'description'   => esc_html__( 'Place for widgets on right side of header', 'speculor' ),
+			'description'   => esc_html__( 'Place for widgets on right side of header.', 'speculor' ),
 			'before_widget' => '<div class="widget  %2$s">',
 			'after_widget'  => '</div>',
 		)
