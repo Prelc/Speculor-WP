@@ -58,7 +58,7 @@
 	// Hide header widgets, if both header sidebars are not in use.
 	if ( is_active_sidebar( 'header-widgets-left' ) || is_active_sidebar( 'header-widgets-right' ) ) {
 	?>
-		<div class="header-widgets">
+		<div class="header-widgets<?php if ( 'show' !== get_theme_mod( 'header_widgets_mobile', 'hide' ) ) : ?>  hidden-md-down<?php endif; ?>">
 			<!-- Header widget left area -->
 			<?php if ( is_active_sidebar( 'header-widgets-left' ) ) : ?>
 				<div class="header-widgets__left">

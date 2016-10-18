@@ -144,6 +144,13 @@ function speculor_customizer( $wp_customize ) {
 
 	// Header Widgets Settings
 	$wp_customize->add_setting(
+		'header_widgets_mobile',
+		array(
+			'default' => 'show',
+			'sanitize_callback' => 'speculor_sanitize_select',
+		)
+	);
+	$wp_customize->add_setting(
 		'header_widgets_text_color',
 		array(
 			'default' => '#696773',
@@ -355,6 +362,19 @@ function speculor_customizer( $wp_customize ) {
 
 	// Header Widgets Controls
 	$wp_customize->add_control(
+		'header_widgets_mobile',
+		array(
+			'type' => 'select',
+			'label' => __( 'Header Widgets on Mobile', 'speculor' ),
+			'description' => __( 'Show or hide header widgets area for screens smaller than 992px.' ),
+			'section' => 'section_header_widgets',
+			'choices' => array(
+				'show' => __( 'Show', 'speculor' ),
+				'hide' => __( 'Hide', 'speculor' ),
+			),
+		)
+	);
+	$wp_customize->add_control(
 		new WP_Customize_Color_Control(
 			$wp_customize,
 			'header_widgets_text_color',
@@ -479,7 +499,7 @@ function speculor_customizer( $wp_customize ) {
 		)
 	);
 
-	// post Controls
+	// Post Controls
 	$wp_customize->add_control(
 		'post_author',
 		array(
