@@ -144,6 +144,13 @@ function speculor_customizer( $wp_customize ) {
 
 	// Header Widgets Settings
 	$wp_customize->add_setting(
+		'header_widgets_mobile',
+		array(
+			'default' => 'show',
+			'sanitize_callback' => 'speculor_sanitize_select',
+		)
+	);
+	$wp_customize->add_setting(
 		'header_widgets_text_color',
 		array(
 			'default' => '#696773',
@@ -355,6 +362,19 @@ function speculor_customizer( $wp_customize ) {
 
 	// Header Widgets Controls
 	$wp_customize->add_control(
+		'header_widgets_mobile',
+		array(
+			'type' => 'select',
+			'label' => __( 'Header Widgets on Mobile', 'speculor' ),
+			'description' => __( 'Show or hide header widgets area for screens smaller than 992px.' ),
+			'section' => 'section_header_widgets',
+			'choices' => array(
+				'show' => __( 'Show', 'speculor' ),
+				'hide' => __( 'Hide', 'speculor' ),
+			),
+		)
+	);
+	$wp_customize->add_control(
 		new WP_Customize_Color_Control(
 			$wp_customize,
 			'header_widgets_text_color',
@@ -479,7 +499,7 @@ function speculor_customizer( $wp_customize ) {
 		)
 	);
 
-	// post Controls
+	// Post Controls
 	$wp_customize->add_control(
 		'post_author',
 		array(
@@ -809,20 +829,24 @@ function customizer_colors() {
 	/* Header Widgets Link Color */
 	<?php if ( $header_widgets_link_color ) : ?>
 		.header-widgets a,
-		.header-widgets .textwidget a {
+		.header-widgets .textwidget a,
+		.header-widgets .widget_nav_menu .menu > .menu-item a {
 			color: <?php echo esc_attr( $header_widgets_link_color ); ?>;
 		}
 
 		.header-widgets a:hover,
 		.header-widgets .textwidget a:focus,
-		.header-widgets .textwidget a:hover {
+		.header-widgets .textwidget a:hover,
+		.header-widgets .widget_nav_menu .menu > .menu-item a:focus,
+		.header-widgets .widget_nav_menu .menu > .menu-item a:hover {
 			color: <?php echo esc_attr( '#' . $base_header_widgets_link_color->darken(12) ); ?>;
 		}
 	<?php endif; ?>
 
 	/* Header Widgets Background Color */
 	<?php if ( $header_widgets_background_color ) : ?>
-		.header-widgets {
+		.header-widgets,
+		.header-widgets .widget_nav_menu .menu .sub-menu a {
 			background-color: <?php echo esc_attr( $header_widgets_background_color ); ?>;
 		}
 	<?php endif; ?>

@@ -366,3 +366,88 @@
 		padding-left: 50px;
 	}
 }
+
+.header-widgets {
+	.widget_nav_menu {
+		.menu {
+			> .menu-item {
+				border-top: 0;
+				display: inline-block;
+
+				&:first-of-type {
+					> a {
+						padding-left: 0;
+					}
+				}
+
+				&:last-of-type {
+					> a {
+						padding-right: 0;
+					}
+				}
+
+				&:focus,
+				&:hover {
+					> .sub-menu {
+						opacity: 1;
+						visibility: visible;
+					}
+				}
+
+				a {
+					font-family: $primary-font;
+					font-weight: normal;
+					color: $gray;
+					padding: 10px 8px;
+
+					&:focus,
+					&:hover {
+						color: darken($gray, 12);
+					}
+				}
+			}
+
+			.sub-menu {
+				position: absolute;
+				z-index: 10;
+				opacity: 0;
+				visibility: hidden;
+				border: 1px solid #ffffff;
+				border-radius: $border-radius;
+
+				.menu-item {
+					display: block;
+					border-top: 0;
+
+					// 2. level sub menus are open on :hover.
+					&:focus,
+					&:hover {
+						> .sub-menu {
+							visibility: visible;
+							opacity: 1;
+						}
+					}
+				}
+
+				a {
+					display: block;
+					background-color: #e6e9ec;
+					padding: 8px 16px;
+					white-space: nowrap;
+				}
+
+				// 2. level + are opening next to each other.
+				.sub-menu {
+					left: 100%;
+					top: -1px;
+
+					.menu-item {
+						a {
+							padding: 8px 16px;
+						}
+					}
+				}
+			}
+		}
+	}
+}

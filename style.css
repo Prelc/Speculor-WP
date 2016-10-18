@@ -2881,6 +2881,7 @@ blockquote {
   .sidebar .widget {
     background-color: #ffffff;
     border: 1px solid #eeeeee;
+    border-radius: 2px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     padding: 17px 15px 20px;
     margin-bottom: 30px; }
@@ -3237,6 +3238,7 @@ blockquote {
   text-align: center;
   background-color: #ffffff;
   border: 1px solid #eeeeee;
+  border-radius: 2px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
   padding: 15px;
   margin-bottom: 30px; }
@@ -3280,6 +3282,7 @@ blockquote {
           flex: 1;
   background-color: #ffffff;
   border: 1px solid #eeeeee;
+  border-radius: 2px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
   padding: 27px 30px;
   margin-bottom: 30px;
@@ -3776,6 +3779,48 @@ th, td {
 
 .widget_nav_menu .sub-menu .sub-menu .sub-menu .sub-menu .sub-menu a {
   padding-left: 50px; }
+
+.header-widgets .widget_nav_menu .menu > .menu-item {
+  border-top: 0;
+  display: inline-block; }
+  .header-widgets .widget_nav_menu .menu > .menu-item:first-of-type > a {
+    padding-left: 0; }
+  .header-widgets .widget_nav_menu .menu > .menu-item:last-of-type > a {
+    padding-right: 0; }
+  .header-widgets .widget_nav_menu .menu > .menu-item:focus > .sub-menu, .header-widgets .widget_nav_menu .menu > .menu-item:hover > .sub-menu {
+    opacity: 1;
+    visibility: visible; }
+  .header-widgets .widget_nav_menu .menu > .menu-item a {
+    font-family: "Lora", Georgia, "Times New Roman", Times, serif;
+    font-weight: normal;
+    color: #696773;
+    padding: 10px 8px; }
+    .header-widgets .widget_nav_menu .menu > .menu-item a:focus, .header-widgets .widget_nav_menu .menu > .menu-item a:hover {
+      color: #4c4a53; }
+
+.header-widgets .widget_nav_menu .menu .sub-menu {
+  position: absolute;
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  border: 1px solid #ffffff;
+  border-radius: 2px; }
+  .header-widgets .widget_nav_menu .menu .sub-menu .menu-item {
+    display: block;
+    border-top: 0; }
+    .header-widgets .widget_nav_menu .menu .sub-menu .menu-item:focus > .sub-menu, .header-widgets .widget_nav_menu .menu .sub-menu .menu-item:hover > .sub-menu {
+      visibility: visible;
+      opacity: 1; }
+  .header-widgets .widget_nav_menu .menu .sub-menu a {
+    display: block;
+    background-color: #e6e9ec;
+    padding: 8px 16px;
+    white-space: nowrap; }
+  .header-widgets .widget_nav_menu .menu .sub-menu .sub-menu {
+    left: 100%;
+    top: -1px; }
+    .header-widgets .widget_nav_menu .menu .sub-menu .sub-menu .menu-item a {
+      padding: 8px 16px; }
 
 /* Article */
 .article {
