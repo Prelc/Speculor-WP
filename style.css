@@ -13,16 +13,32 @@ Text domain: speculor
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
-/*------------------------------------*	01. Project variables
-
-	only visible in SASS source files
-\*------------------------------------*/
-/*------------------------------------*    Local variables
-\*------------------------------------*/
-/*------------------------------------*	02. Twitter Bootstrap
-
-	Remove what is not necessary
-\*------------------------------------*/
+/*
+ TABLE OF CONTENTS
+	01. Project variables............Imported variables
+	02. Twitter Bootstrap............Remove what is not neccessary
+	03. Tags.........................Like <body>, <h1> etc.
+	04. Helpers and utility classes..The general styles.
+	05. Components...................Imported files.
+		05.01. Header
+		05.02. Header Widgets
+		05.03. Sidebar
+		05.04. Footer
+		05.05. Main Navigation
+		05.06. Buttons
+		05.07. Pagination
+		05.08. Post Author
+		05.09. Post Navigation
+		05.10. WordPress Specific
+		05.11. WordPress Widgets
+		05.12. Article
+		05.13. Sticky
+		05.14. Tags
+		05.15. Comments
+*/
+/* 01. Project variables - only visible in SASS source files */
+/* Local variables */
+/* 02. Twitter Bootstrap - Remove what is not necessary */
 /*! normalize.css v4.0.0 | MIT License | github.com/necolas/normalize.css */
 html {
   font-family: sans-serif;
@@ -2636,8 +2652,7 @@ a.text-danger:focus, a.text-danger:hover {
   .hidden-print {
     display: none !important; } }
 
-/*------------------------------------*	03. Tags
-\*------------------------------------*/
+/* 03. Tags */
 html {
   font-size: 16px; }
   @media (min-width: 992px) {
@@ -2708,14 +2723,12 @@ blockquote {
     .comments blockquote::before {
       left: 15px; } }
 
-/*------------------------------------*	04. Helpers and very general classes
-\*------------------------------------*/
+/* 04. Helpers and very general classes */
 .embed-responsive-13by8 {
   padding-bottom: 61.53846%; }
 
-/*------------------------------------*	05. Components
-\*------------------------------------*/
-/* Header */
+/* 05. Components */
+/* 05.01. Header */
 .header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2781,7 +2794,7 @@ blockquote {
   .header + .header-widgets, .header + .page-header {
     margin-top: -60px; }
 
-/* Header Widgets */
+/* 05.02. Header Widgets */
 .header-widgets {
   font-size: 14px;
   background-color: #e6e9ec;
@@ -2868,7 +2881,7 @@ blockquote {
     margin-top: 0.66667rem;
     margin-bottom: 0; }
 
-/* Sidebar */
+/* 05.03. Sidebar */
 .sidebar {
   font-size: 14px; }
   @media (min-width: 992px) {
@@ -2892,7 +2905,7 @@ blockquote {
     margin-bottom: 30px;
     border-bottom: 1px solid #eff1f3; }
 
-/* Footer */
+/* 05.04. Footer */
 .footer {
   font-size: 14px;
   text-align: center;
@@ -2932,7 +2945,7 @@ blockquote {
     .footer__right {
       text-align: right; } }
 
-/* Main Navigation */
+/* 05.05. Main Navigation */
 .main-navigation {
   padding-left: 0;
   list-style: none;
@@ -3154,7 +3167,7 @@ blockquote {
       .main-navigation .featured a::before {
         display: none; }
 
-/* Buttons */
+/* 05.06. Buttons */
 .btn {
   font-family: "Montserrat", Helvetica, Arial, sans-serif;
   font-size: 14px;
@@ -3187,7 +3200,7 @@ blockquote {
       color: #ffffff;
       border-color: #181818; }
 
-/* Pagination */
+/* 05.07. Pagination */
 .pagination {
   font-family: "Montserrat", Helvetica, Arial, sans-serif;
   font-size: 14px;
@@ -3229,7 +3242,7 @@ blockquote {
   .pagination .next {
     float: right; }
 
-/* Post Author */
+/* 05.08. Post Author */
 .post-author {
   text-align: center;
   background-color: #ffffff;
@@ -3263,7 +3276,7 @@ blockquote {
     margin-bottom: 0;
     font-size: 14px; }
 
-/* Post Navigation */
+/* 05.09. Post Navigation */
 .post-navigation {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3334,7 +3347,7 @@ blockquote {
     -webkit-transition: all 100ms ease-out;
     transition: all 100ms ease-out; }
 
-/* WordPress Specific */
+/* 05.10. WordPress Specific */
 .alignnone, .aligncenter, .alignright, .alignleft {
   max-width: 100%;
   height: auto; }
@@ -3536,7 +3549,7 @@ th, td {
     .article__content .image-wide-bottom {
       margin-bottom: -52px; } }
 
-/* WordPress Widgets */
+/* 05.11. WordPress Widgets */
 /* Applies to all widgets */
 .widget select, .widget img {
   max-width: 100%;
@@ -3818,7 +3831,7 @@ th, td {
     .header-widgets .widget_nav_menu .menu .sub-menu .sub-menu .menu-item a {
       padding: 8px 16px; }
 
-/* Article */
+/* 05.12. Article */
 .article {
   background-color: #ffffff;
   border: 1px solid #eeeeee;
@@ -3914,7 +3927,7 @@ th, td {
     .article .more-link:focus, .article .more-link:hover {
       text-decoration: none; }
 
-/* Sticky */
+/* 05.13. Sticky */
 .sticky {
   background-color: #fed766; }
   .sticky .article__meta {
@@ -3924,7 +3937,7 @@ th, td {
   .sticky .article__content {
     color: #272727; }
 
-/* Tags */
+/* 05.14. Tags */
 .tags a {
   display: inline-block;
   font-family: "Montserrat", Helvetica, Arial, sans-serif;
@@ -3944,7 +3957,7 @@ th, td {
     background-color: #dee2e6;
     color: #8a8a8a; }
 
-/* Comments */
+/* 05.15. Comments */
 .comments {
   position: relative;
   font-family: "Montserrat", Helvetica, Arial, sans-serif;
@@ -6202,8 +6215,7 @@ th, td {
   overflow: visible;
   clip: auto; }
 
-/*------------------------------------*	The End :)
-\*------------------------------------*/
+/* The End :) */
 /*# sourceMappingURL=style.css.map */
 
 /*# sourceMappingURL=style.css.map */

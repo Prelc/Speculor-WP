@@ -13,19 +13,35 @@ This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
 
-/*------------------------------------*\
-	01. Project variables
+/*
+ TABLE OF CONTENTS
+	01. Project variables............Imported variables
+	02. Twitter Bootstrap............Remove what is not neccessary
+	03. Tags.........................Like <body>, <h1> etc.
+	04. Helpers and utility classes..The general styles.
+	05. Components...................Imported files.
+		05.01. Header
+		05.02. Header Widgets
+		05.03. Sidebar
+		05.04. Footer
+		05.05. Main Navigation
+		05.06. Buttons
+		05.07. Pagination
+		05.08. Post Author
+		05.09. Post Navigation
+		05.10. WordPress Specific
+		05.11. WordPress Widgets
+		05.12. Article
+		05.13. Sticky
+		05.14. Tags
+		05.15. Comments
+*/
 
-	only visible in SASS source files
-\*------------------------------------*/
+/* 01. Project variables - only visible in SASS source files */
 
 @import 'vars';
 
-/*------------------------------------*\
-	02. Twitter Bootstrap
-
-	Remove what is not necessary
-\*------------------------------------*/
+/* 02. Twitter Bootstrap - Remove what is not necessary */
 
 // Core variables and mixins
 @import 'bower_components/bootstrap/scss/variables';
@@ -75,10 +91,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 // Utility classes
 @import 'bower_components/bootstrap/scss/utilities';
 
-
-/*------------------------------------*\
-	03. Tags
-\*------------------------------------*/
+/* 03. Tags */
 
 html {
 	font-size: 16px;
@@ -103,7 +116,6 @@ figure {
 	height: auto;
 }
 
-// Block code.
 pre {
 	background-color: #f8f8f8;
 	border-top: 1px solid #eeeeee;
@@ -180,9 +192,7 @@ blockquote {
 	}
 }
 
-/*------------------------------------*\
-	04. Helpers and very general classes
-\*------------------------------------*/
+/* 04. Helpers and very general classes */
 
 .screen-reader-text {
 	@extend .sr-only;
@@ -192,9 +202,7 @@ blockquote {
 	padding-bottom: percentage(8 / 13);
 }
 
-/*------------------------------------*\
-	05. Components
-\*------------------------------------*/
+/* 05. Components */
 
 // Layout
 @import 'components/header';
@@ -221,8 +229,6 @@ blockquote {
 // Fonts
 @import '../../bower_components/font-awesome/scss/font-awesome';
 
-/*------------------------------------*\
-	The End :)
-\*------------------------------------*/
+/* The End :) */
 
 /*# sourceMappingURL=style.css.map */
