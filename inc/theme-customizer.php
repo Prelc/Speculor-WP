@@ -366,7 +366,7 @@ function speculor_customizer( $wp_customize ) {
 		array(
 			'type' => 'select',
 			'label' => __( 'Header Widgets on Mobile', 'speculor' ),
-			'description' => __( 'Show or hide header widgets area for screens smaller than 992px.' ),
+			'description' => __( 'Show or hide header widgets area for screens smaller than 992px.', 'speculor' ),
 			'section' => 'section_header_widgets',
 			'choices' => array(
 				'show' => __( 'Show', 'speculor' ),
