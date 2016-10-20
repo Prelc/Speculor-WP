@@ -63,6 +63,16 @@
 
 		a {
 			color: $gray-dark;
+
+			&:focus,
+			&:hover {
+				text-decoration: none;
+				background: linear-gradient(currentColor, currentColor) no-repeat;
+				background-size: 100% 2px;
+				background-position: 0 calc(100% - 3px);
+				color: $gray-dark;
+				text-shadow: 3px 0 #ffffff, -3px 0 #ffffff;
+			}
 		}
 	}
 

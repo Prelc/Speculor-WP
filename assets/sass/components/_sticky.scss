@@ -2,15 +2,31 @@
 .sticky {
 	background-color: $brand-primary;
 
-	.article__meta {
-		color: $gray;
-
-		a {
+	.article {
+		&__meta {
 			color: $gray;
-		}
-	}
 
-	.article__content {
-		color: $gray-dark;
+			a {
+				color: $gray;
+			}
+		}
+
+		&__title {
+			a {
+				&:focus,
+				&:hover {
+					text-decoration: none;
+					background: linear-gradient(currentColor, currentColor) no-repeat;
+					background-size: 100% 2px;
+					background-position: 0 calc(100% - 3px);
+					color: $gray-dark;
+					text-shadow: 3px 0 $brand-primary, -3px 0 $brand-primary;
+				}
+			}
+		}
+
+		&__content {
+			color: $gray-dark;
+		}
 	}
 }
