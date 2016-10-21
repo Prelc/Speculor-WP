@@ -252,7 +252,7 @@ function speculor_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
 		'footer_left',
 		array(
-			'default' => esc_html__( 'Speculor - WordPress theme made by %sPrelc%s.', 'speculor' ), '<a href="https://twitter.com/prelc">', '</a>' ),
+			'default' => sprintf( esc_html__( 'Speculor - WordPress theme made by %sPrelc%s.', 'speculor' ), '<a href="https://twitter.com/prelc">', '</a>' ),
 			'sanitize_callback' => 'wp_kses_post',
 		)
 	);
