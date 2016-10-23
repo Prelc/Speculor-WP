@@ -3178,7 +3178,8 @@ blockquote {
   .btn-rounded {
     border-radius: 45px; }
   .btn-primary {
-    color: #272727; }
+    color: #272727;
+    text-shadow: 1px 0 1px rgba(255, 255, 255, 0.5); }
     .btn-primary:focus, .btn-primary:hover {
       background-color: #fec729;
       color: #272727;
@@ -4138,7 +4139,8 @@ th, td {
   color: #272727;
   border-radius: 2px;
   border-color: #fed766;
-  padding: 10px 30px; }
+  padding: 10px 30px;
+  text-shadow: 1px 0 1px rgba(255, 255, 255, 0.5); }
   .comment-respond .submit:focus, .comment-respond .submit:hover {
     color: #272727;
     border-color: #fec729;

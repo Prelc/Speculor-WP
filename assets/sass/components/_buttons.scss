@@ -12,6 +12,7 @@
 
 	&-primary {
 		color: $gray-dark;
+		text-shadow: 1px 0 1px rgba(255, 255, 255, .5);
 
 		&:focus,
 		&:hover {
