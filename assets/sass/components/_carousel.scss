@@ -1,0 +1,141 @@
+/* Carousel */
+.carousel {
+	margin-bottom: 60px;
+
+	&:focus {
+		.carousel-control {
+			opacity: 0;
+		}
+	}
+
+	&:hover {
+		.carousel-control {
+			opacity: 1;
+		}
+	}
+
+	&-caption {
+		position: relative;
+		background-color: #ffffff;
+		left: 0;
+		right: 0;
+		text-align: left;
+		text-shadow: none;
+		padding: 18px 15px 10px;
+
+		@include media-breakpoint-up(sm) {
+			padding: 38px 45px 35px;
+		}
+
+		@include media-breakpoint-up(lg) {
+			position: absolute;
+			background-color: rgba(255, 255, 255, .9);
+			border-radius: $border-radius;
+			box-shadow: $primary-box-shadow;
+			width: 515px;
+			left: calc(50% - #{map-get($container-max-widths, lg) / 2} + 15px );
+			top: 50%;
+			bottom: initial;
+			transform: translateY(-50%);
+		}
+
+		@include media-breakpoint-up(xl) {
+			left: calc(50% - #{map-get($container-max-widths, xl) / 2} + 15px );
+			padding: 53px 60px 50px;
+		}
+	}
+
+	.item {
+		transform-style: preserve-3d;
+	}
+
+	&-indicators {
+		display: none;
+	}
+
+	&-control {
+		opacity: 1;
+		text-shadow: none;
+		line-height: 48px;
+		background-color: rgba(255, 255, 255, .9);
+		color: $gray;
+		border-radius: $border-radius;
+		box-shadow: $primary-box-shadow;
+		top: 20px;
+		width: 45px;
+		height: 45px;
+		transition: $primary-transition;
+
+		@include media-breakpoint-up(sm) {
+			top: 60px;
+		}
+
+		@include media-breakpoint-up(md) {
+			top: 100px;
+		}
+
+		@include media-breakpoint-up(lg) {
+			opacity: 0;
+			top: calc(50% - 22px);
+		}
+
+		&.left,
+		&.right {
+			background-image: none;
+		}
+
+		&.left {
+			padding-right: 2px;
+
+			@include media-breakpoint-up(lg) {
+				left: 5px;
+			}
+
+			@include media-breakpoint-up(xl) {
+				left: 20px;
+			}
+		}
+
+		&.right {
+			padding-left: 2px;
+
+			@include media-breakpoint-up(lg) {
+				right: 5px;
+			}
+
+			@include media-breakpoint-up(xl) {
+				right: 20px;
+			}
+		}
+
+		&:focus {
+			opacity: 1;
+			color: $gray;
+			box-shadow: $primary-box-shadow;
+
+			@include media-breakpoint-up(lg) {
+				opacity: 0;
+			}
+		}
+
+		&:hover {
+			color: $gray-dark;
+			box-shadow: $primary-box-shadow-hover;
+		}
+	}
+
+	&__title {
+		font-size: 24px;
+		margin-bottom: 12px;
+
+		@include media-breakpoint-up(lg) {
+			font-size: 36px;
+		}
+	}
+
+	&__text {
+		color: $gray;
+		font-size: 16px;
+		margin-bottom: 0;
+	}
+}

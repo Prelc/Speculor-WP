@@ -15,6 +15,6 @@ require.config( {
 	},
 } );
 
-require( [ 'util', 'collapse', 'dropdown' ], function () {
+require( [ 'util', 'carousel', 'collapse', 'dropdown' ], function () {
 	'use strict';
 } );

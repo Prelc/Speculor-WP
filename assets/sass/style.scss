@@ -86,7 +86,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 // @import 'bower_components/bootstrap/scss/modal';
 // @import 'bower_components/bootstrap/scss/tooltip';
 // @import 'bower_components/bootstrap/scss/popover';
-// @import 'bower_components/bootstrap/scss/carousel';
+@import 'bower_components/bootstrap/scss/carousel';
 
 // Utility classes
 @import 'bower_components/bootstrap/scss/utilities';
@@ -217,6 +217,7 @@ blockquote {
 @import 'components/pagination';
 @import 'components/post-author';
 @import 'components/post-navigation';
+@import 'components/carousel';
 
 // WordPress Specific
 @import 'components/wp';
