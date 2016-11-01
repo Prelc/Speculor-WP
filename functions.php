@@ -58,6 +58,11 @@ function speculor_setup() {
 	) );
 
 	/*
+	 * Enable support for Excerpt for pages.
+	 */
+	add_post_type_support( 'page', 'excerpt' );
+
+	/*
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
 	 */
@@ -74,6 +79,9 @@ function speculor_setup() {
 		'default-color' => 'eff1f3',
 		'default-image' => '',
 	) ) );
+
+	// Add theme support for custom header.
+	add_theme_support( 'custom-header', array('width' => 1920, 'height' => 600) );
 }
 endif;
 add_action( 'after_setup_theme', 'speculor_setup' );

@@ -83,6 +83,15 @@ function speculor_customizer( $wp_customize ) {
 	);
 
 	$wp_customize->add_section(
+		'section_featured_pages',
+		array(
+			'title' => __( 'Featured Pages', 'speculor' ),
+			'description' => __( 'Select which pages you want to show as featured in Front Page with Hero Image page template.', 'speculor' ),
+			'priority' => 80,
+			'panel'  => 'panel_theme-options',
+	) );
+
+	$wp_customize->add_section(
 		'section_footer',
 		array(
 			'title' => __( 'Footer', 'speculor' ),
@@ -232,6 +241,20 @@ function speculor_customizer( $wp_customize ) {
 		)
 	);
 
+	// Hero Image settings
+	$wp_customize->add_setting( 'hero_image_title', array(
+		'sanitize_callback' => 'wp_kses_post',
+	) );
+	$wp_customize->add_setting( 'hero_image_text', array(
+		'sanitize_callback' => 'wp_kses_post',
+	) );
+	$wp_customize->add_setting( 'hero_image_button_text', array(
+		'sanitize_callback' => 'wp_kses_post',
+	) );
+	$wp_customize->add_setting( 'hero_image_button_link', array(
+		'sanitize_callback' => 'esc_url'
+	) );
+
 	// Post settings
 	$wp_customize->add_setting(
 		'post_author',
@@ -247,6 +270,27 @@ function speculor_customizer( $wp_customize ) {
 			'sanitize_callback' => 'speculor_sanitize_select',
 		)
 	);
+
+	// Featured Pages
+	for ( $count = 1; $count <= 4; $count++ ) {
+		// Add color scheme setting and control.
+		$wp_customize->add_setting(
+			'featured_pages' . $count,
+			array(
+				'default' => '',
+				'sanitize_callback' => 'absint'
+			)
+		);
+
+		$wp_customize->add_control(
+			'featured_pages' . $count,
+			array(
+				'type' => 'dropdown-pages',
+				'label' => __( 'Select Page', 'speculor' ),
+				'section'  => 'section_featured_pages',
+			)
+		);
+	}
 
 	// Footer Settings
 	$wp_customize->add_setting(
@@ -499,6 +543,42 @@ function speculor_customizer( $wp_customize ) {
 		)
 	);
 
+	// Hero Image Controls
+	$wp_customize->add_control(
+		'hero_image_title',
+		array(
+			'type' => 'text',
+			'label' => __( 'Title', 'speculor' ),
+			'priority' => 20,
+			'section' => 'header_image',
+		)
+	);
+	$wp_customize->add_control(
+		'hero_image_text',
+		array(
+			'type' => 'text',
+			'label'    => __( 'Text', 'speculor' ),
+			'priority' => 25,
+			'section'  => 'header_image',
+		)
+	);
+	$wp_customize->add_control(
+		'hero_image_button_text',
+		array(
+			'type' => 'text',
+			'label'    => __( 'Button text', 'speculor' ),
+			'priority' => 30,
+			'section'  => 'header_image',
+	) );
+	$wp_customize->add_control(
+		'hero_image_button_link',
+		array(
+			'label'    => __( 'Button URL', 'speculor' ),
+			'section'  => 'header_image',
+			'priority' => 35,
+		)
+	);
+
 	// Post Controls
 	$wp_customize->add_control(
 		'post_author',
@@ -542,7 +622,7 @@ function speculor_customizer( $wp_customize ) {
 		array(
 			'type' => 'text',
 			'label' => __( 'Footer text on the right', 'speculor' ),
-			'priority'    => 20,
+			'priority' => 20,
 			'section' => 'section_footer',
 		)
 	);
@@ -737,18 +817,24 @@ function customizer_colors() {
 	<?php if ( $headings_color ) : ?>
 		h1, h2, h3, h4, h5, h6,
 		.article__title a,
+		.article__title a:focus,
 		.article__title a:hover,
 		.page-header__title,
 		.post-author__name,
 		.post-navigation__title,
-		.sidebar__heading {
+		.sidebar__heading,
+		.featured-page__title-link,
+		.featured-page__title-link:focus,
+		.featured-page__title-link:hover,
+		.hero-image__title {
 			color: <?php echo esc_attr( $headings_color ); ?>;
 		}
 	<?php endif; ?>
 
 	/* Text Color */
 	<?php if ( $text_color ) : ?>
-		body {
+		body,
+		.hero-image__text {
 			color: <?php echo esc_attr( $text_color ); ?>;
 		}
 	<?php endif; ?>
