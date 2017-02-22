@@ -252,7 +252,7 @@ function speculor_customizer( $wp_customize ) {
 		'sanitize_callback' => 'wp_kses_post',
 	) );
 	$wp_customize->add_setting( 'hero_image_button_link', array(
-		'sanitize_callback' => 'esc_url'
+		'sanitize_callback' => 'esc_url_raw'
 	) );
 
 	// Post settings
