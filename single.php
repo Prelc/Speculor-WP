@@ -67,7 +67,7 @@ get_template_part( 'template-parts/page-header' );
 						?>
 
 						<div class="post-navigation__container">
-							<a class="post-navigation  post-navigation--previous" href="<?php echo get_permalink( $prev_post ); ?>">
+							<a class="post-navigation  post-navigation--previous" href="<?php the_permalink( $prev_post ); ?>">
 								<div class="h5  post-navigation__title  post-navigation__title--previous">
 									<?php echo get_the_title( $prev_post ); ?>
 								</div>
@@ -75,7 +75,7 @@ get_template_part( 'template-parts/page-header' );
 									<?php esc_html_e( 'Previous post' , 'speculor' ); ?>
 								</div>
 							</a>
-							<a class="post-navigation  post-navigation--next" href="<?php echo get_permalink( $next_post ); ?>">
+							<a class="post-navigation  post-navigation--next" href="<?php the_permalink( $next_post ); ?>">
 								<div class="h5  post-navigation__title  post-navigation__title--next">
 									<?php echo get_the_title( $next_post ); ?>
 								</div>
