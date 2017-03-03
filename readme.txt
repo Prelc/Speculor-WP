@@ -23,3 +23,15 @@ Source: https://arlo.mit-license.org/
 Pencils from screenshot, Copyright Joanna Kosinska 2016.
 Image is licensed under the terms of the CC0 Public Domain.
 Source: https://unsplash.com/photos/1_CMoFsPfso
+
+Photographer from screenshot, Copyright Guus Baggermans 2016.
+Image is licensed under the terms of the CC0 Public Domain.
+Source: https://unsplash.com/photos/q3xYnF92SkI
+
+Couch from screenshot, Copyright Christelle Bourgeois 2016.
+Image is licensed under the terms of the CC0 Public Domain.
+Source: https://unsplash.com/photos/-xOHLRUW4k8
+
+The Titanic Memorial Garden from screenshot, Copyright Yaniv Knobel 2016.
+Image is licensed under the terms of the CC0 Public Domain.
+Source: https://unsplash.com/photos/9_fZaxzvGuA
