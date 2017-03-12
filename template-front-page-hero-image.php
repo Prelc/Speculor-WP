@@ -11,7 +11,7 @@ get_header(); ?>
 <!-- Section: Hero Image -->
 	<section class="hero-image">
 		<!-- Hero Image -->
-		<img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
+		<img src="<?php header_image(); ?>" width="<?php esc_attr_e( get_custom_header()->width ); ?>" height="<?php esc_attr_e( get_custom_header()->height ); ?>" alt="<?php esc_attr_e( get_bloginfo( 'name', 'display' ) ); ?>">
 		<!-- Hero Image Content -->
 		<div class="hero-image__content">
 			<?php if( get_theme_mod( 'hero_image_title') !== '' ) : ?>
