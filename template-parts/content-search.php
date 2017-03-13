@@ -37,12 +37,6 @@
 	endif; ?>
 	<!-- Content & Read more text -->
 	<div class="article__content  e-content">
-		<?php
-			the_excerpt( sprintf(
-				/* translators: %s: Name of current post. */
-				wp_kses( __( 'Read more', 'speculor' ), array( 'span' => array( 'class' => array() ) ) ),
-				the_title( '<span class="screen-reader-text">"', '"</span>', false )
-			) );
-		?>
+		<?php the_excerpt(); ?>
 	</div>
 </article><!-- #post-## -->
