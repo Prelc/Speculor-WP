@@ -1,0 +1,8 @@
+{
+    "name":         "speculor",
+    "description":  "WordPress theme made by Prelc.",
+    "license":      "GPL-2.0+",
+    "require": {
+        "freemius/wordpress-sdk": "dev-feature/fs-theme-mode-v4"
+    }
+}

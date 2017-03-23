@@ -7,6 +7,33 @@
  * @package speculor
  */
 
+// Create a helper function for easy SDK access.
+function speculor_fs() {
+	global $speculor_fs;
+
+	if ( ! isset( $speculor_fs ) ) {
+		// Include Freemius SDK.
+		require_once dirname(__FILE__) . '/vendor/freemius/wordpress-sdk/start.php';
+
+		$speculor_fs = fs_dynamic_init( array(
+			'id'                  => '870',
+			'slug'                => 'speculor',
+			'type'                => 'theme',
+			'public_key'          => 'pk_b6498a55e7b06c9e7427bae666aaa',
+			'is_premium'          => false,
+			'has_addons'          => false,
+			'has_paid_plans'      => false,
+		) );
+	}
+
+	return $speculor_fs;
+}
+
+// Init Freemius.
+speculor_fs();
+// Signal that SDK was initiated.
+do_action( 'speculor_fs_loaded' );
+
 if ( ! function_exists( 'speculor_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
