@@ -19,6 +19,14 @@ function speculor_customizer( $wp_customize ) {
 		)
 	);
 
+	$wp_customize->add_section(
+		'panel_theme-info',
+		array(
+			'priority' => 15,
+			'title' => __( 'Theme Info', 'speculor' ),
+		)
+	);
+
 	/**
 	 * Sections
 	 */
@@ -328,6 +336,23 @@ function speculor_customizer( $wp_customize ) {
 			'sanitize_callback' => 'sanitize_hex_color',
 		)
 	);
+
+	// Theme Info
+	$wp_customize->add_setting( 'theme_info_text' );
+
+	$wp_customize->add_control( 'theme_info_text', array(
+		'type'        => 'hidden',
+		'priority'    => 5,
+		'description' => sprintf( esc_html__( '%1$sView demo%2$s %3$s %4$sSpeculor on GitHub%2$s %3$s %5$sBuy me a beer%2$s' , 'consultpress-lite' ),
+		'<b><a style="display: block; font-style: normal; height: 45px; line-height: 45px;" class="button" href="http://www.prelc.si/speculor/" target="_blank">',
+		'</a></b>',
+		'<hr>',
+		'<b><a style="display: block; font-style: normal; height: 45px; line-height: 45px;" class="button" href="https://github.com/Prelc/Speculor-WP" target="_blank">',
+		'<b><a style="display: block; font-style: normal; height: 45px; line-height: 45px;" class="button" href="https://paypal.me/prelc" target="_blank">'
+		),
+		'section'     => 'panel_theme-info',
+	) );
+
 
 	/**
 	 * Controls
